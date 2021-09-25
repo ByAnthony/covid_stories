@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Our Charities</h1>
+    {% for charity in charities %}
+        <div class="flex-container">
+            <div><a href="/charities/{{charity.id}}">{{charity.name}}</a></div>
+        </div>
+    {% endfor %}
+{% endblock %}
