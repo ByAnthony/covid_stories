@@ -18,3 +18,13 @@ def select_all():
         charity = Charity(row['name'], row['description'], row['website'], row['id'])
         charities.append(charity)
     return charities
+
+def select(id):
+    charity = None
+    sql = "SELECT * FROM charities WHERE id=%s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        charity = Charity(result['name'], result['description'], result['website'], result['id'])
+    return charity

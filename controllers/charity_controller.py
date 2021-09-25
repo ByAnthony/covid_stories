@@ -7,4 +7,23 @@ charities_blueprint = Blueprint("charity", __name__)
 @charities_blueprint.route("/charities/")
 def charities():
     charities = charity_repository.select_all()
-    return render_template("/charities/index.html", title="Support Charities", charities=charities)
+    return render_template("charities/index.html", title="Our Charities", charities=charities)
+    
+@charities_blueprint.route("/charities/<id>/")
+def show(id):
+    charity = charity_repository.select(id)
+    charity_name = charity.name
+    return render_template("charities/show.html", title=charity_name, charity=charity)
+
+@charities_blueprint.route("/charities/new/")
+def new_charity():
+    return render_template("charities/new.html", title="Add A Charity")
+
+@charities_blueprint.route("/charities/", methods=['POST'])
+def create_charity():
+    name = request.form['name']
+    description = request.form['description']
+    website = request.form['website']
+    charity = Charity(name, description, website)
+    charity_repository.save(charity)
+    return redirect("/charities")
