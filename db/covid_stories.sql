@@ -22,7 +22,7 @@ CREATE TABLE memories (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     contributor_id INT REFERENCES contributors(id) ON DELETE CASCADE,
-    account VARCHAR(255),
+    story VARCHAR(255),
     date DATE,
     charity_id INT REFERENCES charities(id) ON DELETE CASCADE
 );
