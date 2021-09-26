@@ -37,3 +37,8 @@ def select(id):
         charity = charity_repository.select(result['charity_id'])
         memory = Memory(result['title'], contributor, result['story'], result['date'], charity, result['id'])
     return memory
+
+def delete(id):
+    sql = "DELETE FROM memories WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

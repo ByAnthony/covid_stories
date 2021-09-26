@@ -35,3 +35,9 @@ def create_charity():
     charity = Charity(name, description, website)
     charity_repository.save(charity)
     return redirect("/charities")
+
+
+@charities_blueprint.route("/charities/<id>/delete/", methods=['POST'])
+def delete(id):
+    charity_repository.delete(id)
+    return redirect("/charities")

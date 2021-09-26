@@ -43,3 +43,9 @@ def create_memory():
     memory = Memory(title, contributor, story, date, charity)
     memory_repository.save(memory)
     return redirect("/memories")
+
+
+@memories_blueprint.route("/memories/<id>/delete/", methods=['POST'])
+def delete(id):
+    memory_repository.delete(id)
+    return redirect("/memories")

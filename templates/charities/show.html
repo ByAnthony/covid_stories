@@ -14,4 +14,7 @@
                 <p><a href="/memories/{{memory.id}}/">{{memory.title}}</a></p>
             {% endfor %}
         </div>
+        <form class="delete-form" action="/charities/{{charity.id}}/delete/" method="post">
+            <button>Delete Charity</button>
+        </form>
 {% endblock %}

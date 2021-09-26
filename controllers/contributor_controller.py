@@ -37,3 +37,9 @@ def create_contributor():
     contributor = Contributor(first_name, last_name, age, profession, address)
     contributor_repository.save(contributor)
     return redirect("/contributors")
+
+
+@contributors_blueprint.route("/contributors/<id>/delete/", methods=['POST'])
+def delete(id):
+    contributor_repository.delete(id)
+    return redirect("/contributors")

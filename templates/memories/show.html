@@ -7,4 +7,7 @@
             <p>{{memory.story}}</p>
         </div>
         <a href="/charities/{{memory.charity.id}}/">{{memory.charity.name}}</a>
+        <form class="delete-form" action="/memories/{{memory.id}}/delete/" method="post">
+            <button>Delete Memory</button>
+        </form>
 {% endblock %}

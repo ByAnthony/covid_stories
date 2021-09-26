@@ -20,4 +20,7 @@
                 <a href="/memories/{{memory.id}}/">{{memory.title}}</p>
             {% endfor %}
         </div>
+        <form class="delete-form" action="/contributors/{{contributor.id}}/delete/" method="post">
+            <button>Delete Contributor</button>
+        </form>
 {% endblock %}

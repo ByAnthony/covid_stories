@@ -38,6 +38,12 @@ def select(id):
     return charity
 
 
+def delete(id):
+    sql = "DELETE FROM charities WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
 def contributors(charity):
     contributors = []
     sql = "SELECT contributors.* FROM contributors INNER JOIN memories ON memories.contributor_id = contributors.id WHERE charity_id=%s"
