@@ -7,3 +7,23 @@ def save(contributor):
     results = run_sql(sql, values)
     contributor.id = results[0]['id']
     return contributor
+
+def select_all():
+    contributors = []
+    sql = "SELECT * FROM contributors ORDER BY last_name ASC"
+    results = run_sql(sql)
+
+    for row in results:
+        contributor = Contributor(row['first_name'], row['last_name'], row['age'], row['profession'], row['address'], row['id'])
+        contributors.append(contributor)
+    return contributors
+
+def select(id):
+    contributor = None
+    sql = "SELECT * FROM contributors WHERE id=%s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        contributor = Contributor(result['first_name'], result['last_name'], result['age'], result['profession'], result['address'], result['id'])
+    return contributor
