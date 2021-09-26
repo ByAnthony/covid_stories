@@ -14,8 +14,9 @@ def contributors():
 def show(id):
     contributor = contributor_repository.select(id)
     charities = contributor_repository.charities(contributor)
+    memories = contributor_repository.memories(contributor)
     contributor_name = contributor.first_name + " " + contributor.last_name
-    return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charities=charities)
+    return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charities=charities, memories=memories)
 
 @contributors_blueprint.route("/contributors/new/")
 def new_contributor():

@@ -43,3 +43,16 @@ def charities(contributor):
         charity = Charity(row['name'], row['description'], row['website'], row['id'])
         charities.append(charity)
     return charities
+
+def memories(contributor):
+    memories = []
+    sql = "SELECT contributors.*, memories.* FROM contributors RIGHT JOIN memories ON contributors.id=memories.contributor_id WHERE contributor_id=%s"
+    values = [contributor.id]
+    result = run_sql(sql, values)
+
+    for row in result:
+        contributor = contributor_repository.select(row['contributor_id'])
+        charity = charity_repository.select(row['charity_id'])
+        memory = Memory(row['title'], contributor, row['story'], row['date'], charity, row['id'])
+        memories.append(memory)
+    return memories
