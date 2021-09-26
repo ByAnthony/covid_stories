@@ -6,12 +6,14 @@ from models.memory import Memory
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
 
+
 def save(contributor):
     sql = "INSERT INTO contributors (first_name, last_name, age, profession, address) VALUES (%s, %s, %s, %s, %s) RETURNING id"
     values = [contributor.first_name, contributor.last_name, contributor.age, contributor.profession, contributor.address]
     results = run_sql(sql, values)
     contributor.id = results[0]['id']
     return contributor
+
 
 def select_all():
     contributors = []
@@ -23,6 +25,7 @@ def select_all():
         contributors.append(contributor)
     return contributors
 
+
 def select(id):
     contributor = None
     sql = "SELECT * FROM contributors WHERE id=%s"
@@ -32,6 +35,7 @@ def select(id):
     if result is not None:
         contributor = Contributor(result['first_name'], result['last_name'], result['age'], result['profession'], result['address'], result['id'])
     return contributor
+
 
 def charities(contributor):
     charities = []
@@ -43,6 +47,7 @@ def charities(contributor):
         charity = Charity(row['name'], row['description'], row['website'], row['id'])
         charities.append(charity)
     return charities
+
 
 def memories(contributor):
     memories = []

@@ -1,4 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Home</h1>
+    <div>
+        <a href="/charities/">{{count_charities}} Charities</a>
+    </div>
+    <div>
+        <a href="/contributors/">{{count_contributors}} Contributors</a>
+    </div>
+    <div>
+        <a href="/memories/">{{count_memories}} Memories</a>
+    </div>
 {% endblock %}

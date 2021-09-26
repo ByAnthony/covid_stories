@@ -3,13 +3,16 @@ from models.charity import Charity
 
 import repositories.charity_repository as charity_repository
 
+
 charities_blueprint = Blueprint("charity", __name__)
+
 
 @charities_blueprint.route("/charities/")
 def charities():
     charities = charity_repository.select_all()
     return render_template("charities/index.html", title="Our Charities", charities=charities)
     
+
 @charities_blueprint.route("/charities/<id>/")
 def show(id):
     charity = charity_repository.select(id)
@@ -18,9 +21,11 @@ def show(id):
     charity_name = charity.name
     return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, memories=memories)
 
+
 @charities_blueprint.route("/charities/new/")
 def new_charity():
     return render_template("charities/new.html", title="Add A Charity")
+
 
 @charities_blueprint.route("/charities/", methods=['POST'])
 def create_charity():

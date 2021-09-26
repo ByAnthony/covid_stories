@@ -1,16 +1,18 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.contributor import Contributor
-from models.memory import Memory
 
 import repositories.contributor_repository as contributor_repository
 
+
 contributors_blueprint = Blueprint("contributor", __name__)
+
 
 @contributors_blueprint.route("/contributors/")
 def contributors():
     contributors = contributor_repository.select_all()
     return render_template("contributors/index.html", title="Our Contributors", contributors=contributors)
     
+
 @contributors_blueprint.route("/contributors/<id>/")
 def show(id):
     contributor = contributor_repository.select(id)
@@ -19,9 +21,11 @@ def show(id):
     contributor_name = contributor.first_name + " " + contributor.last_name
     return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charities=charities, memories=memories)
 
+
 @contributors_blueprint.route("/contributors/new/")
 def new_contributor():
     return render_template("contributors/new.html", title="Create a profile")
+
 
 @contributors_blueprint.route("/contributors/", methods=['POST'])
 def create_contributor():
