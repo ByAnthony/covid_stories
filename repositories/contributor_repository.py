@@ -27,3 +27,4 @@ def select(id):
     if result is not None:
         contributor = Contributor(result['first_name'], result['last_name'], result['age'], result['profession'], result['address'], result['id'])
     return contributor
+

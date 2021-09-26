@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{memory.title}}</h1>
+    <h4>By {{memory.contributor.first_name}} {{memory.contributor.last_name}}</h4>
+    <h5>{{convert_date}}</h5>
+        <div>
+            <p>{{memory.story}}</p>
+        </div>
+{% endblock %}

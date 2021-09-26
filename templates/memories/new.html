@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>New Contributor</h1>
+
+        <form action="/memories/" method="post">
+            <div>
+                <p><label for="title">Title</label></p>
+                <input type="text" id="title" name="title" placeholder="Title" required autofocus>
+            </div>
+            <div>
+                <label for="contributor">Contributor:</label>
+                <select id="contributor" name="contributor_id">
+                    {% for contributor in contributors %}
+                    <option value="{{contributor.id}}">{{contributor.first_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <p><label for="story">Story</label></p>
+                <textarea id="story" name="story" placeholder="Story" required></textarea>
+            </div>
+            <div>
+                <p><label for="date">Date</label></p>
+                <input type="date" id="date" name="date" placeholder="Date" required>
+            </div>
+            <div>
+                <label for="charity">Charity:</label>
+                <select id="charity" name="charity_id">
+                    {% for charity in charities %}
+                    <option value="{{charity.id}}">{{charity.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Create Account</button>
+            </div>
+        </form>
+
+{% endblock %}

@@ -20,3 +20,7 @@ class TestMemory(unittest.TestCase):
 
     def test_memory_has_charity_id(self):
         self.assertEqual(2, self.memory.charity)
+
+    def test_memory_has_converted_date(self):
+        convert_date = self.memory.sqlDateToOut()
+        self.assertEqual("25/09/2021", convert_date)
