@@ -2,12 +2,27 @@
 {% block content %}
     <h1>Home</h1>
     <div>
-        <a href="/charities/">{{count_charities}} Charities</a>
+        {% if count_memories == 1 %}
+            <p>{{count_memories}} Charity</p>
+        {% elif count_memories > 1 %}
+            <a href="/charities/">{{count_charities}} Charities</a>
+        {% else %}
+        {% endif %}
     </div>
     <div>
-        <a href="/contributors/">{{count_contributors}} Contributors</a>
+        {% if count_memories == 1 %}
+            <p>{{count_memories}} Contributor</p>
+        {% elif count_memories > 1 %}
+            <a href="/contributors/">{{count_contributors}} Contributors</a>
+        {% else %}
+        {% endif %}
     </div>
     <div>
-        <a href="/memories/">{{count_memories}} Memories</a>
+        {% if count_memories == 1 %}
+            <p>{{count_memories}} Memory</p>
+        {% elif count_memories > 1 %}
+            <a href="/memories/">{{count_memories}} Memories</a>
+        {% else %}
+        {% endif %}
     </div>
 {% endblock %}

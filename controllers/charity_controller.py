@@ -17,9 +17,10 @@ def charities():
 def show(id):
     charity = charity_repository.select(id)
     contributors = charity_repository.contributors(charity)
+    count_contributors = len(contributors)
     memories = charity_repository.memories(charity)
     charity_name = charity.name
-    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, memories=memories)
+    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, count_contributors=count_contributors, memories=memories)
 
 
 @charities_blueprint.route("/charities/new/")

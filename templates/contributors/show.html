@@ -13,8 +13,11 @@
             {% endfor %}
         </div>
         <div>
-            {% if memories %}
-                <p>Published</p>
+            {% if count_memories == 1 %}
+                <p>{{count_memories}} Memory</p>
+            {% elif count_memories > 1 %}
+                <p>{{count_memories}} Memories</p>
+            {% else %}
             {% endif %}
             {% for memory in memories %}
                 <a href="/memories/{{memory.id}}/">{{memory.title}}</p>

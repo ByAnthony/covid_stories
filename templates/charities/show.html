@@ -6,6 +6,12 @@
             <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
         </div>
         <div>
+            {% if count_contributors == 1 %}
+                <p>{{count_contributors}} Supporter</p>
+            {% elif count_contributors > 1 %}
+                <p>{{count_contributors}} Supporters</p>
+            {% else %}
+            {% endif %}
             {% if memories %}
                 <p>Supported by</p>
             {% endif %}
