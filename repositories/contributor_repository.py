@@ -43,6 +43,12 @@ def delete(id):
     run_sql(sql, values)
 
 
+def update(contributor):
+    sql = "UPDATE contributors SET (first_name, last_name, age, profession, address) = (%s, %s, %s, %s, %s) WHERE id=%s"
+    values = [contributor.first_name, contributor.last_name, contributor.age, contributor.profession, contributor.address, contributor.id]
+    run_sql(sql, values)
+
+
 def charities(contributor):
     charities = []
     sql = "SELECT charities.* FROM charities INNER JOIN memories ON memories.charity_id = charities.id WHERE contributor_id=%s"

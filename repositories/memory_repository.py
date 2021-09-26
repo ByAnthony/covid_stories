@@ -38,6 +38,13 @@ def select(id):
         memory = Memory(result['title'], contributor, result['story'], result['date'], charity, result['id'])
     return memory
 
+
+def update(memory):
+    sql = "UPDATE memories SET (title, contributor_id, story, date, charity_id) = (%s, %s, %s, %s, %s) WHERE id=%s"
+    values = [memory.title, memory.contributor.id, memory.story, memory.date, memory.charity.id, memory.id]
+    run_sql(sql, values)
+
+
 def delete(id):
     sql = "DELETE FROM memories WHERE id = %s"
     values = [id]

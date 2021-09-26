@@ -41,3 +41,20 @@ def create_charity():
 def delete(id):
     charity_repository.delete(id)
     return redirect("/charities")
+
+
+@charities_blueprint.route("/charities/<id>/edit/", methods=['GET'])
+def edit_charity(id):
+    charity = charity_repository.select(id)
+    return render_template("/charities/edit.html", title="Edit Your Charity", charity=charity)
+
+
+@charities_blueprint.route("/charities/<id>/", methods=['POST'])
+def update_charity(id):
+    name = request.form['name']
+    description = request.form['description']
+    website = request.form['website']
+    charity = Charity(name, description, website, id)
+    charity_repository.update(charity)
+    charity_name = charity.name
+    return render_template("/charities/show.html", title=charity_name, charity=charity, charity_name=charity_name)

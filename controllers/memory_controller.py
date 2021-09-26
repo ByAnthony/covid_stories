@@ -49,3 +49,26 @@ def create_memory():
 def delete(id):
     memory_repository.delete(id)
     return redirect("/memories")
+
+
+@memories_blueprint.route("/memories/<id>/edit/", methods=['GET'])
+def edit_memory(id):
+    memory = memory_repository.select(id)
+    contributors = contributor_repository.select_all()
+    charities = charity_repository.select_all()
+    return render_template("/memories/edit.html", title="Edit Your Memory", memory=memory, contributors=contributors, charities=charities)
+
+
+@memories_blueprint.route("/memories/<id>/", methods=['POST'])
+def update_memory(id):
+    title = request.form['title']
+    contributor_id = request.form['contributor_id']
+    story = request.form['story']
+    date = request.form['date']
+    charity_id = request.form['charity_id']
+    contributor = contributor_repository.select(contributor_id)
+    charity = charity_repository.select(charity_id)
+    memory = Memory(title, contributor, story, date, charity, id)
+    memory_repository.update(memory)
+    memory_title = memory.title
+    return render_template("/memories/show.html", title=memory_title, memory=memory, memory_title=memory_title)

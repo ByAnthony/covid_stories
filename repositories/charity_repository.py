@@ -18,7 +18,7 @@ def save(charity):
 
 def select_all():
     charities = []
-    sql = "SELECT * FROM charities"
+    sql = "SELECT * FROM charities ORDER By name ASC"
     results = run_sql(sql)
 
     for row in results:
@@ -41,6 +41,12 @@ def select(id):
 def delete(id):
     sql = "DELETE FROM charities WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+
+def update(charity):
+    sql = "UPDATE charities SET (name, description, website) = (%s, %s, %s) WHERE id=%s"
+    values = [charity.name, charity.description, charity.website, charity.id]
     run_sql(sql, values)
 
 
