@@ -30,7 +30,7 @@ def select(id):
         charity = Charity(result['name'], result['description'], result['website'], result['id'])
     return charity
 
-def contributor(charity):
+def contributors(charity):
     contributors = []
     sql = "SELECT contributors.* FROM contributors INNER JOIN memories ON memories.contributor_id = contributors.id WHERE charity_id=%s"
     values = [charity.id]

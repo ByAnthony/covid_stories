@@ -6,7 +6,9 @@
             <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
         </div>
         <div>
-            <h4>Supported by</h4>
-            <p>{{contributor.first_name}} {{contributor.last_name}}</p>
+            {% for contributor in contributors %}
+            <p>Supported by</p>
+            <p>{{contributor.first_name}}</p>
+            {% endfor %}
         </div>
 {% endblock %}

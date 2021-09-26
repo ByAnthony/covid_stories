@@ -3,7 +3,6 @@ from models.memory import Memory
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
-import models.memory as memory_models
 
 def save(memory):
     sql = "INSERT INTO memories (title, contributor_id, story, date, charity_id) VALUES (%s, %s, %s, %s, %s) RETURNING id"

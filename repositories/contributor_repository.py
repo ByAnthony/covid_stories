@@ -1,6 +1,10 @@
 from db.run_sql import run_sql
 from models.contributor import Contributor
 from models.charity import Charity
+from models.memory import Memory
+
+import repositories.charity_repository as charity_repository
+import repositories.contributor_repository as contributor_repository
 
 def save(contributor):
     sql = "INSERT INTO contributors (first_name, last_name, age, profession, address) VALUES (%s, %s, %s, %s, %s) RETURNING id"
@@ -29,7 +33,7 @@ def select(id):
         contributor = Contributor(result['first_name'], result['last_name'], result['age'], result['profession'], result['address'], result['id'])
     return contributor
 
-def charity(contributor):
+def charities(contributor):
     charities = []
     sql = "SELECT charities.* FROM charities INNER JOIN memories ON memories.charity_id = charities.id WHERE contributor_id=%s"
     values = [contributor.id]

@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.charity import Charity
+
 import repositories.charity_repository as charity_repository
-import repositories.contributor_repository as contributor_repository
 
 charities_blueprint = Blueprint("charity", __name__)
 
@@ -12,10 +12,10 @@ def charities():
     
 @charities_blueprint.route("/charities/<id>/")
 def show(id):
-    contributor = contributor_repository.select(id)
     charity = charity_repository.select(id)
+    contributors = charity_repository.contributors(charity)
     charity_name = charity.name
-    return render_template("charities/show.html", title=charity_name, charity=charity, contributor=contributor)
+    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors)
 
 @charities_blueprint.route("/charities/new/")
 def new_charity():

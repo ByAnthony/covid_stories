@@ -5,7 +5,9 @@
             <p>{{contributor.age}} years old, {{contributor.address}}, {{contributor.profession}}</p>
         </div>
         <div>
-            <h4>Supports</h4>
+            {% for charity in charities %}
+            <p>Supports</p>
             <p>{{charity.name}}</p>
+            {% endfor %}
         </div>
 {% endblock %}
