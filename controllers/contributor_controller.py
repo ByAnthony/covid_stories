@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.contributor import Contributor
 import repositories.contributor_repository as contributor_repository
+import repositories.charity_repository as charity_repository
 
 contributors_blueprint = Blueprint("contributor", __name__)
 
@@ -11,9 +12,10 @@ def contributors():
     
 @contributors_blueprint.route("/contributors/<id>/")
 def show(id):
+    charity = charity_repository.select(id)
     contributor = contributor_repository.select(id)
     contributor_name = contributor.first_name + " " + contributor.last_name
-    return render_template("contributors/show.html", title=contributor_name, contributor=contributor)
+    return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charity=charity)
 
 @contributors_blueprint.route("/contributors/new/")
 def new_contributor():
