@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>{{memory.title}}</h1>
-    <h4>By {{memory.contributor.first_name}} {{memory.contributor.last_name}}</h4>
+    <a href="/contributors/{{memory.contributor.id}}/">By {{memory.contributor.first_name}} {{memory.contributor.last_name}}</a>
     <h5>{{convert_date}}</h5>
         <div>
             <p>{{memory.story}}</p>
         </div>
-        {{memory.charity.name}}
+        <a href="/charities/{{memory.charity.id}}/">{{memory.charity.name}}</a>
 {% endblock %}

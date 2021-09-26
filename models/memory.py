@@ -9,7 +9,7 @@ class Memory():
         self.charity = charity
         self.id = id
 
-    def sqlDateToOut(self):
+    def convert_date(self):
         date = self.date
         date = datetime.datetime.strptime(str(date), "%Y-%m-%d")
         date = date.strftime("%d/%m/%Y")

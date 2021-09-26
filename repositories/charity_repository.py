@@ -2,6 +2,10 @@ from pdb import run
 from db.run_sql import run_sql
 from models.charity import Charity
 from models.contributor import Contributor
+from models.memory import Memory
+
+import repositories.charity_repository as charity_repository
+import repositories.contributor_repository as contributor_repository
 
 def save(charity):
     sql = "INSERT INTO charities (name, description, website) VALUES (%s, %s, %s) RETURNING id"
@@ -40,3 +44,16 @@ def contributors(charity):
         contributor = Contributor(row['first_name'], row['last_name'], row['age'], row['profession'], row['address'], row['id'])
         contributors.append(contributor)
     return contributors
+
+def memories(charity):
+    memories = []
+    sql = "SELECT charities.*, memories.* FROM charities RIGHT JOIN memories ON charities.id=memories.charity_id WHERE charity_id=%s"
+    values = [charity.id]
+    result = run_sql(sql, values)
+    
+    for row in result:
+        contributor = contributor_repository.select(row['contributor_id'])
+        charity = charity_repository.select(row['charity_id'])
+        memory = Memory(row['title'], contributor, row['story'], row['date'], charity, row['id'])
+        memories.append(memory)
+    return memories

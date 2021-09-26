@@ -49,7 +49,7 @@ def memories(contributor):
     sql = "SELECT contributors.*, memories.* FROM contributors RIGHT JOIN memories ON contributors.id=memories.contributor_id WHERE contributor_id=%s"
     values = [contributor.id]
     result = run_sql(sql, values)
-
+    
     for row in result:
         contributor = contributor_repository.select(row['contributor_id'])
         charity = charity_repository.select(row['charity_id'])

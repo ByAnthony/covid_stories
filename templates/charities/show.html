@@ -6,9 +6,12 @@
             <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
         </div>
         <div>
-            {% for contributor in contributors %}
-            <p>Supported by</p>
-            <p>{{contributor.first_name}}</p>
+            {% if memories %}
+                <p>Supported by</p>
+            {% endif %}
+            {% for memory in memories %}
+                <p><a href="/contributors/{{memory.contributor.id}}/">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></p>
+                <p><a href="/memories/{{memory.id}}/">{{memory.title}}</a></p>
             {% endfor %}
         </div>
 {% endblock %}

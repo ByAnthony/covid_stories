@@ -16,7 +16,7 @@ def memories():
 def show(id):
     memory = memory_repository.select(id)
     memory_title = memory.title
-    convert_date = memory.sqlDateToOut()
+    convert_date = memory.convert_date()
     return render_template("memories/show.html", title=memory_title, memory=memory, convert_date=convert_date)
 
 @memories_blueprint.route("/memories/new/")

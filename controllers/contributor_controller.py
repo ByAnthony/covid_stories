@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.contributor import Contributor
+from models.memory import Memory
 
 import repositories.contributor_repository as contributor_repository
 

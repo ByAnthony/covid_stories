@@ -5,6 +5,9 @@ class TestMemory(unittest.TestCase):
 
     def setUp(self):
         self.memory = Memory("Lacking Nature", 1, "My Story of lockdown", "2021-09-25", 2)
+        self.memory2 = Memory("Missing Family", 2, "My Story of missing my family", "2021-06-23", 2)
+
+        self.memories = [self.memory, self.memory2]
 
     def test_memory_has_title(self):
         self.assertEqual("Lacking Nature", self.memory.title)
@@ -22,5 +25,5 @@ class TestMemory(unittest.TestCase):
         self.assertEqual(2, self.memory.charity)
 
     def test_memory_has_converted_date(self):
-        convert_date = self.memory.sqlDateToOut()
+        convert_date = self.memory.convert_date()
         self.assertEqual("25/09/2021", convert_date)

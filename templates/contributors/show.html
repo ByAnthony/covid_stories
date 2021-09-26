@@ -5,15 +5,19 @@
             <p>{{contributor.age}} years old, {{contributor.address}}, {{contributor.profession}}</p>
         </div>
         <div>
+            {% if charities %}
+                <p>Supports</p>
+            {% endif %}
             {% for charity in charities %}
-            <p>Supports</p>
-            <p>{{charity.name}}</p>
+                <a href="/charities/{{charity.id}}/">{{charity.name}}</a>
             {% endfor %}
         </div>
         <div>
+            {% if memories %}
+                <p>Published</p>
+            {% endif %}
             {% for memory in memories %}
-            <p>Published</p>
-            <p>{{memory.title}}</p>
+                <a href="/memories/{{memory.id}}/">{{memory.title}}</p>
             {% endfor %}
         </div>
 {% endblock %}

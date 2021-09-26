@@ -13,7 +13,7 @@ def save(memory):
 
 def select_all():
     memories = []
-    sql = "SELECT * FROM memories ORDER BY date"
+    sql = "SELECT * FROM memories ORDER BY date DESC"
     results = run_sql(sql)
 
     for row in results:
