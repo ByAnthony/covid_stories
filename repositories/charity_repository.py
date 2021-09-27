@@ -76,7 +76,7 @@ def memories(charity):
         memories.append(memory)
     return memories
 
-# Is it in the right repository??
+
 def events(charity):
     events = []
     sql = "SELECT charities.*, events.* FROM charities RIGHT JOIN events ON charities.id=events.charity_id WHERE charity_id=%s"

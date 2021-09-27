@@ -1,7 +1,20 @@
 html, body{
-    margin:0;
+    margin:0 auto;
+    width:100%;
+    height:100%;
     color:rgb(255,255,255);
     background-color:rgb(30,20,92);
+}
+/* temporary link color */
+a{
+    color:white;
+}
+body > #index{
+    width:100%;
+    height:85%;
+}
+body > header{
+    height:20%;
 }
 body > header > #logo{
     padding:35px 0 0 50px;
@@ -15,10 +28,11 @@ body > header > #logo > a{
 }
 body > header > #logo > a:hover{
     color:rgb(220,220,220);
+    transition:1s;
     text-decoration:none;
 }
 body > header > nav{
-    padding:10px 10px 0 0;
+    padding:32px 10px 0 0;
     font-family:Nunito, Arial, Helvetica, sans-serif;
     float:right;
 }
@@ -28,11 +42,35 @@ body > header > nav > ul > li{
 }
 body > header > nav > ul > li a{
     color:rgb(220,220,220);
-    opacity:50%;
+    opacity:60%;
     text-decoration:none;
 }
 body > header > nav > ul > li a:hover{
     color:rgb(220,220,220);
+    opacity:100%;
+    transition:opacity 1s;
+    text-decoration:none;
+}
+.count_total{
+    margin:auto;
+    clear:right;
+    display:flex;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    justify-content:center;
+}
+.count_total > div {
+    background-color:rgb(66,33,165);
+    margin:10px;
+    padding:20px 30px 20px 30px;
+    font-size:25px;
+    border-radius:15px;
+  }
+.count_total > div > a{
+    color:rgb(220,220,220);
+    opacity:60%;
+    text-decoration:none;
+}
+.count_total > div > a:hover{ 
     opacity:100%;
     transition:opacity 1s;
     text-decoration:none;

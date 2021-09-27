@@ -3,11 +3,14 @@
     <h1>Your Memories</h1>
     {% for memory in memories %}
         <div class="flex-container">
-            <div>{{memory.contributor.first_name}} {{memory.contributor.last_name}}</div>
+            <div><a href="/contributors/{{memory.contributor.id}}">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></div>
             <div><a href="/memories/{{memory.id}}">{{memory.title}}</a></div>
         </div>
     {% endfor %}
         <div>
             <a href="/memories/new/">Contribute</a>
+        </div>
+        <div>
+            <a href="/contributors/">See All contributors</a>
         </div>
 {% endblock %}

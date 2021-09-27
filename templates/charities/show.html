@@ -8,6 +8,10 @@
             <p>{{charity.description}}</p>
             <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
         </div>
+        <form class="delete-form" action="/charities/{{charity.id}}/delete/" method="post">
+            <button>Delete Charity</button>
+        </form>
+        <p><a href="/charities/{{charity.id}}/edit/">Edit</a></p>
         <div>
             {% if count_contributors == 1 %}
                 <p>{{count_contributors}} Supporter</p>
@@ -23,15 +27,10 @@
                 <p><a href="/memories/{{memory.id}}/">{{memory.title}}</a></p>
             {% endfor %}
         </div>
-        <form class="delete-form" action="/charities/{{charity.id}}/delete/" method="post">
-            <button>Delete Charity</button>
-        </form>
-        <p><a href="/charities/{{charity.id}}/edit/">Edit</a></p>
         <div>
             {% for event in events %}
                 <p>{{event.name}}</p>
                 <p>{{event.description}}</p>
-                <p>£{{event.fee}}</p>
                 <p>{{event.date}}</p>
             {% endfor %}
         </div>

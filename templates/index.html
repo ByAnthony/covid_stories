@@ -1,29 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base_index.html' %}
 {% block content %}
-<article>
+<section class="count_total">
     <div>
         {% if count_memories == 1 %}
-            <p>{{count_memories}} Charity</p>
+            <p>{{count_memories}} memory</p>
         {% elif count_memories > 1 %}
-            <a href="/charities/">{{count_charities}} Charities</a>
+            <a href="/memories/">{{count_memories}} memories</a>
         {% else %}
         {% endif %}
     </div>
     <div>
         {% if count_memories == 1 %}
-            <p>{{count_memories}} Contributor</p>
+            <p>{{count_memories}} charity</p>
         {% elif count_memories > 1 %}
-            <a href="/contributors/">{{count_contributors}} Contributors</a>
+            <a href="/charities/">{{count_charities}} charities</a>
         {% else %}
         {% endif %}
     </div>
     <div>
         {% if count_memories == 1 %}
-            <p>{{count_memories}} Memory</p>
+            <p>{{count_memories}} contributor</p>
         {% elif count_memories > 1 %}
-            <a href="/memories/">{{count_memories}} Memories</a>
+            <a href="/contributors/">{{count_contributors}} contributors</a>
         {% else %}
         {% endif %}
     </div>
-</article>
+</section>
 {% endblock %}
