@@ -56,7 +56,7 @@ def charities(contributor):
     result = run_sql(sql, values)
 
     for row in result:
-        charity = Charity(row['name'], row['description'], row['website'], row['website'], row['id'])
+        charity = Charity(row['name'], row['description'], row['website'], row['id'])
         charities.append(charity)
     return charities
 

@@ -3,6 +3,7 @@
     <h1>Your Memories</h1>
     {% for memory in memories %}
         <div class="flex-container">
+            <div>{{memory.convert_date()}}</div>
             <div><a href="/contributors/{{memory.contributor.id}}">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></div>
             <div><a href="/memories/{{memory.id}}">{{memory.title}}</a></div>
         </div>

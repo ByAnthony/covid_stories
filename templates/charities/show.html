@@ -2,20 +2,22 @@
 {% block content %}
 <article class="charities">
 
-    
-        <img src="{{charity.image}}" height="150">
-   
+    {% if charity.name == "NHS Charities Together" %}
+        <img src="/static/images/logo/nhs.png" height="150" style="padding-bottom:20px">
+    {% elif charity.name == "Shelter Scotland" %}
+        <img src="/static/images/logo/shelter.png" height="150" style="padding-bottom:20px">
+    {% elif charity.name == "Mind" %}
+        <img src="/static/images/logo/mind.png" height="150" style="padding-bottom:20px">
+    {% else %}
         <h1>{{charity.name}}</h1>
-   
+    {% endif %}
 
-        <div>
-            <p>{{charity.description}}</p>
-            <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
-        </div>
-        <form class="delete-form" action="/charities/{{charity.id}}/delete/" method="post">
-            <button>Delete Charity</button>
-        </form>
-        <p><a href="/charities/{{charity.id}}/edit/">Edit</a></p>
+        <p>{{charity.description}}</p>
+
+        <section class="add-button">
+            <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a><a href="/charities/{{charity.id}}/edit/">Edit</a>
+        </section>
+
         <div>
             {% if count_contributors == 1 %}
                 <p>{{count_contributors}} Supporter</p>
@@ -35,8 +37,13 @@
             {% for event in events %}
                 <p>{{event.name}}</p>
                 <p>{{event.description}}</p>
-                <p>{{event.date}}</p>
+                <p>{{event.convert_date()}}</p>
             {% endfor %}
         </div>
+
+        <form action="/charities/{{charity.id}}/delete/" method="post">
+            <button>Delete Charity</button>
+        </form>
+
 </article>
 {% endblock %}
