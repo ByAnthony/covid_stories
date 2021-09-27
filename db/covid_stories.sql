@@ -16,8 +16,7 @@ CREATE TABLE charities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description TEXT,
-    website VARCHAR(255),
-    image VARCHAR(255) NULL
+    website VARCHAR(255)
 );
 
 CREATE TABLE memories (

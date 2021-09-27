@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-{% if charity.image %}
-    <img src="{{charity.image}}" width="20%">
-{% endif %}
-    <h1>{{charity.name}}</h1>
+<article class="charities">
+
+    
+        <img src="{{charity.image}}" height="150">
+   
+        <h1>{{charity.name}}</h1>
+   
+
         <div>
             <p>{{charity.description}}</p>
             <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
@@ -34,4 +38,5 @@
                 <p>{{event.date}}</p>
             {% endfor %}
         </div>
+</article>
 {% endblock %}

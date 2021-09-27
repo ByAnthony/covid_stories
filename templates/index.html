@@ -1,29 +1,31 @@
-{% extends 'base_index.html' %}
+{% extends 'base.html' %}
 {% block content %}
-<section class="count_total">
-    <div>
-        {% if count_memories == 1 %}
-            <p>{{count_memories}} memory</p>
-        {% elif count_memories > 1 %}
-            <a href="/memories/">{{count_memories}} memories</a>
-        {% else %}
-        {% endif %}
-    </div>
-    <div>
-        {% if count_memories == 1 %}
-            <p>{{count_memories}} charity</p>
-        {% elif count_memories > 1 %}
-            <a href="/charities/">{{count_charities}} charities</a>
-        {% else %}
-        {% endif %}
-    </div>
-    <div>
-        {% if count_memories == 1 %}
-            <p>{{count_memories}} contributor</p>
-        {% elif count_memories > 1 %}
-            <a href="/contributors/">{{count_contributors}} contributors</a>
-        {% else %}
-        {% endif %}
-    </div>
-</section>
+<article>
+		
+    <header style="background-image:url(/static/images/)">
+        <div class="article-header-in">
+                    
+            <div class="container">
+                <div class="sixteen columns">
+                    <h2 class="article-title">Share your memories</h2>
+                    <h4 class="article-subtitle">Support a charity</h4>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    
+        <p>About</p>
+    
+
+    <section class="count_total">
+        <ul>
+            <li><a href="/memories/">{% if count_memories == 1 %}{{count_memories}} memory{% elif count_memories > 1 %}{{count_memories}} memories{% else %}{% endif %}</a></li>
+            <li><a href="/charities/">{% if count_charities == 1 %}{{count_charities}} charity{% elif count_charities > 1 %}{{count_charities}} charities{% else %}{% endif %}</a></li>
+            <li><a href="/contributors/">{% if count_contributors == 1 %}{{count_contributors}} contributor{% elif count_contributors > 1 %}{{count_contributors}} contributors{% else %}{% endif %}</a></li>
+        </ul>
+    </section>
+
+</article>
 {% endblock %}

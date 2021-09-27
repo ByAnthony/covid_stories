@@ -11,11 +11,11 @@ import repositories.memory_repository as memory_repository
 import repositories.event_repository as event_repository
 
 
-charity_1 = Charity("NHS Charities Together", "we provide the extra support needed to care for NHS staff, patients and communities", "https://nhscharitiestogether.co.uk", "/static/images/logo/nhs.png")
+charity_1 = Charity("NHS Charities Together", "we provide the extra support needed to care for NHS staff, patients and communities", "https://nhscharitiestogether.co.uk")
 charity_repository.save(charity_1)
-charity_2 = Charity("Mind", "We provide advice and support to empower anyone experiencing a mental health problem", "https://www.mind.org.uk", "/static/images/logo/mind.png")
+charity_2 = Charity("Mind", "We provide advice and support to empower anyone experiencing a mental health problem", "https://www.mind.org.uk")
 charity_repository.save(charity_2)
-charity_3 = Charity("Shelter Scotland", "We strive every day to give people struggling with bad housing or homelessness the help they need", "https://scotland.shelter.org.uk", "/static/images/logo/shelter.png")
+charity_3 = Charity("Shelter Scotland", "We strive every day to give people struggling with bad housing or homelessness the help they need", "https://scotland.shelter.org.uk")
 charity_repository.save(charity_3)
 
 
@@ -34,7 +34,7 @@ memory_repository.save(memory_1)
 
 event_1 = Event("Hill Walking", "Walk for charity", charity_1, 10, "2022-01-26")
 event_repository.save(event_1)
-event_2 = Event("Lock Swimming", "Swim for charity", charity_2, 15, "2022-04-05")
+event_2 = Event("Loch Swimming", "Swim for charity", charity_2, 15, "2022-04-05")
 event_repository.save(event_2)
 event_3 = Event("Marathon", "Run for charity", charity_3, 20, "2022-06-23")
 event_repository.save(event_3)

@@ -10,8 +10,8 @@ import repositories.contributor_repository as contributor_repository
 
 
 def save(charity):
-    sql = "INSERT INTO charities (name, description, website, image) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [charity.name, charity.description, charity.website, charity.image]
+    sql = "INSERT INTO charities (name, description, website) VALUES (%s, %s, %s) RETURNING id"
+    values = [charity.name, charity.description, charity.website]
     results = run_sql(sql, values)
     charity.id = results[0]['id']
     return charity
@@ -23,7 +23,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        charity = Charity(row['name'], row['description'], row['website'], row['image'], row['id'])
+        charity = Charity(row['name'], row['description'], row['website'], row['id'])
         charities.append(charity)
     return charities
 
@@ -35,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        charity = Charity(result['name'], result['description'], result['website'], result['image'], result['id'])
+        charity = Charity(result['name'], result['description'], result['website'], result['id'])
     return charity
 
 
@@ -46,8 +46,8 @@ def delete(id):
 
 
 def update(charity):
-    sql = "UPDATE charities SET (name, description, website, image) = (%s, %s, %s, %s) WHERE id=%s"
-    values = [charity.name, charity.description, charity.website, charity.image, charity.id]
+    sql = "UPDATE charities SET (name, description, website) = (%s, %s, %s) WHERE id=%s"
+    values = [charity.name, charity.description, charity.website, charity.id]
     run_sql(sql, values)
 
 

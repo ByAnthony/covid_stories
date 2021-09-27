@@ -62,5 +62,4 @@ def update_contributor(id):
     address = request.form['address']
     contributor = Contributor(first_name, last_name, age, profession, address, id)
     contributor_repository.update(contributor)
-    contributor_name = contributor.first_name + " " + contributor.last_name
-    return render_template("/contributors/show.html", title=contributor_name, contributor=contributor, contributor_name=contributor_name)
+    return redirect("/contributors")

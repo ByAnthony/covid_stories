@@ -34,8 +34,7 @@ def create_charity():
     name = request.form['name']
     description = request.form['description']
     website = request.form['website']
-    image = None
-    charity = Charity(name, description, website, image)
+    charity = Charity(name, description, website)
     charity_repository.save(charity)
     return redirect("/charities")
 
@@ -57,8 +56,6 @@ def update_charity(id):
     name = request.form['name']
     description = request.form['description']
     website = request.form['website']
-    image = None
-    charity = Charity(name, description, website, image, id)
+    charity = Charity(name, description, website, id)
     charity_repository.update(charity)
-    charity_name = charity.name
-    return render_template("/charities/show.html", title=charity_name, charity=charity, charity_name=charity_name)
+    return redirect("/charities")
