@@ -1,6 +1,7 @@
 import datetime
 
 class Memory():
+    
     def __init__(self, title, contributor, story, date, charity, id=None):
         self.title = title
         self.contributor = contributor

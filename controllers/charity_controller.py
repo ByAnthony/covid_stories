@@ -19,8 +19,9 @@ def show(id):
     contributors = charity_repository.contributors(charity)
     count_contributors = len(contributors)
     memories = charity_repository.memories(charity)
+    events = charity_repository.events(charity)
     charity_name = charity.name
-    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, count_contributors=count_contributors, memories=memories)
+    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, count_contributors=count_contributors, memories=memories, events=events)
 
 
 @charities_blueprint.route("/charities/new/")
@@ -33,7 +34,8 @@ def create_charity():
     name = request.form['name']
     description = request.form['description']
     website = request.form['website']
-    charity = Charity(name, description, website)
+    image = None
+    charity = Charity(name, description, website, image)
     charity_repository.save(charity)
     return redirect("/charities")
 
@@ -55,7 +57,8 @@ def update_charity(id):
     name = request.form['name']
     description = request.form['description']
     website = request.form['website']
-    charity = Charity(name, description, website, id)
+    image = None
+    charity = Charity(name, description, website, image, id)
     charity_repository.update(charity)
     charity_name = charity.name
     return render_template("/charities/show.html", title=charity_name, charity=charity, charity_name=charity_name)

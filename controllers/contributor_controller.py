@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect
 from models.contributor import Contributor
 
 import repositories.contributor_repository as contributor_repository
+import repositories.charity_repository as charity_repository
 
 
 contributors_blueprint = Blueprint("contributor", __name__)

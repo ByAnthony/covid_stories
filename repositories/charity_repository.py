@@ -3,14 +3,15 @@ from db.run_sql import run_sql
 from models.charity import Charity
 from models.contributor import Contributor
 from models.memory import Memory
+from models.event import Event
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
 
 
 def save(charity):
-    sql = "INSERT INTO charities (name, description, website) VALUES (%s, %s, %s) RETURNING id"
-    values = [charity.name, charity.description, charity.website]
+    sql = "INSERT INTO charities (name, description, website, image) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [charity.name, charity.description, charity.website, charity.image]
     results = run_sql(sql, values)
     charity.id = results[0]['id']
     return charity
@@ -22,7 +23,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        charity = Charity(row['name'], row['description'], row['website'], row['id'])
+        charity = Charity(row['name'], row['description'], row['website'], row['image'], row['id'])
         charities.append(charity)
     return charities
 
@@ -34,7 +35,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        charity = Charity(result['name'], result['description'], result['website'], result['id'])
+        charity = Charity(result['name'], result['description'], result['website'], result['image'], result['id'])
     return charity
 
 
@@ -45,8 +46,8 @@ def delete(id):
 
 
 def update(charity):
-    sql = "UPDATE charities SET (name, description, website) = (%s, %s, %s) WHERE id=%s"
-    values = [charity.name, charity.description, charity.website, charity.id]
+    sql = "UPDATE charities SET (name, description, website, image) = (%s, %s, %s, %s) WHERE id=%s"
+    values = [charity.name, charity.description, charity.website, charity.image, charity.id]
     run_sql(sql, values)
 
 
@@ -74,3 +75,16 @@ def memories(charity):
         memory = Memory(row['title'], contributor, row['story'], row['date'], charity, row['id'])
         memories.append(memory)
     return memories
+
+# Is it in the right repository??
+def events(charity):
+    events = []
+    sql = "SELECT charities.*, events.* FROM charities RIGHT JOIN events ON charities.id=events.charity_id WHERE charity_id=%s"
+    values = [charity.id]
+    result = run_sql(sql, values)
+
+    for row in result:
+        charity = charity_repository.select(row['charity_id'])
+        event = Event(row['name'], row['description'], charity, row['fee'], row['date'], row['id'])
+        events.append(event)
+    return events

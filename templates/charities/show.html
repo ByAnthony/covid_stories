@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if charity.image %}
+    <img src="{{charity.image}}" width="20%">
+{% endif %}
     <h1>{{charity.name}}</h1>
         <div>
             <p>{{charity.description}}</p>
@@ -24,4 +27,12 @@
             <button>Delete Charity</button>
         </form>
         <p><a href="/charities/{{charity.id}}/edit/">Edit</a></p>
+        <div>
+            {% for event in events %}
+                <p>{{event.name}}</p>
+                <p>{{event.description}}</p>
+                <p>£{{event.fee}}</p>
+                <p>{{event.date}}</p>
+            {% endfor %}
+        </div>
 {% endblock %}

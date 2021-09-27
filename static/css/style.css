@@ -1,0 +1,42 @@
+html, body{
+    margin:0;
+    color:rgb(255,255,255);
+    background-color:rgb(30,20,92);
+}
+body > header > #logo{
+    padding:35px 0 0 50px;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    float:left;
+}
+body > header > #logo > a{
+    font-size:27px;
+    color:rgb(255,255,255);
+    text-decoration:none;
+}
+body > header > #logo > a:hover{
+    color:rgb(220,220,220);
+    text-decoration:none;
+}
+body > header > nav{
+    padding:10px 10px 0 0;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    float:right;
+}
+body > header > nav > ul > li{
+    padding-right:50px;
+    display:inline-block;
+}
+body > header > nav > ul > li a{
+    color:rgb(220,220,220);
+    opacity:50%;
+    text-decoration:none;
+}
+body > header > nav > ul > li a:hover{
+    color:rgb(220,220,220);
+    opacity:100%;
+    transition:opacity 1s;
+    text-decoration:none;
+}
+body > article{
+    clear:right;
+}

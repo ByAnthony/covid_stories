@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Home</h1>
+<article>
     <div>
         {% if count_memories == 1 %}
             <p>{{count_memories}} Charity</p>
@@ -25,4 +25,5 @@
         {% else %}
         {% endif %}
     </div>
+</article>
 {% endblock %}

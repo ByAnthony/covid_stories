@@ -1,3 +1,4 @@
+DROP TABLE events;
 DROP TABLE memories;
 DROP TABLE contributors;
 DROP TABLE charities;
@@ -15,7 +16,8 @@ CREATE TABLE charities (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     description TEXT,
-    website VARCHAR(255)
+    website VARCHAR(255),
+    image VARCHAR(255) NULL
 );
 
 CREATE TABLE memories (
@@ -25,4 +27,13 @@ CREATE TABLE memories (
     story VARCHAR(255),
     date DATE,
     charity_id INT REFERENCES charities(id) ON DELETE CASCADE
+);
+
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    charity_id INT REFERENCES charities(id) ON DELETE CASCADE,
+    fee INT,
+    date DATE
 );
