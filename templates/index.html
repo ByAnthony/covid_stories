@@ -1,31 +1,62 @@
 {% extends 'base.html' %}
 {% block content %}
-<article>
+<article class="index">
 		
-    <header style="background-image:url(/static/images/)">
+    <header style="background-image:url(/static/images/masks.jpg); background-attachment:fixed;">
         <div class="article-header-in">
                     
             <div class="container">
                 <div class="sixteen columns">
-                    <h2 class="article-title">Share your memories</h2>
-                    <h4 class="article-subtitle">Support a charity</h4>
+                    <h2 class="article-title">Support your charities</h2>
+                    <h4 class="article-subtitle"><a href="/memories/">Share your memory</a></h4>
                 </div>
             </div>
 
         </div>
     </header>
 
-    
-        <p>About</p>
-    
+</article>
 
-    <section class="count_total">
-        <ul>
-            <li><a href="/memories/">{% if count_memories == 1 %}{{count_memories}} memory{% elif count_memories > 1 %}{{count_memories}} memories{% else %}{% endif %}</a></li>
-            <li><a href="/charities/">{% if count_charities == 1 %}{{count_charities}} charity{% elif count_charities > 1 %}{{count_charities}} charities{% else %}{% endif %}</a></li>
-            <li><a href="/contributors/">{% if count_contributors == 1 %}{{count_contributors}} contributor{% elif count_contributors > 1 %}{{count_contributors}} contributors{% else %}{% endif %}</a></li>
-        </ul>
+    <section class="about">
+
+        <h6>About</h6>
+        <h1>Covid stories</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   
+        <div class="count_total">
+            <ul>
+                <li><a href="/charities/">{% if count_charities == 1 %}{{count_charities}} charity{% elif count_charities > 1 %}{{count_charities}} charities{% else %}{% endif %}</a></li>
+                <li><a href="/memories/">{% if count_memories == 1 %}{{count_memories}} memory{% elif count_memories > 1 %}{{count_memories}} memories{% else %}{% endif %}</a></li>
+                <li><a href="/contributors/">{% if count_contributors == 1 %}{{count_contributors}} contributor{% elif count_contributors > 1 %}{{count_contributors}} contributors{% else %}{% endif %}</a></li>
+            </ul>
+        </div>
+
     </section>
 
-</article>
+    <section class="presentation">
+        <section class="about">
+            
+            <h6>How to</h6>
+            <h1>Help your charities</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+            <section class="link-button">
+                <a href="/charities/">Discover charities</a>
+            </section>
+
+        </section>
+    </section>
+
+    <section class="contribute">
+
+        <h6>Contribute</h6>
+        <h1>Raise your voice</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <section class="link-button">
+            <a href="/memories/">Let's get started</a>
+        </section>
+
+    </section>
+
 {% endblock %}

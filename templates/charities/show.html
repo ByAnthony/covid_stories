@@ -17,6 +17,7 @@
     <section class="link-button">
         <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
         <a href="/charities/{{charity.id}}/edit/">Edit</a>
+        <a href="/events/new/">Create an event</a>
     </section>
 
     <div>
@@ -47,7 +48,7 @@
 
     {% if events %}
     <section class="events">
-        <h2>Upcoming events</h2>
+        <h2>Organised by your charity</h2>
         {% for event in events %}
             <div class="flex-charities">
                 <div class="charity"><a href="/events/{{event.id}}/">{{event.name}}</a></div>

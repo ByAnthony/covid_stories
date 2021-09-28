@@ -7,9 +7,10 @@ body > article{
     left:0;
 	width:100%;
     height:100%;
+    z-index:1;
 }
 body > article > header{
-	padding:0;
+    padding:0;
     margin:0;
     top:0;
     left:0;
@@ -23,13 +24,13 @@ body > article > header{
   	overflow:hidden;
 }
 .article-header-in{
-  	position:relative;
+  	position:absolute;
   	width:100%;
-  	top:50%;
+  	top:52%;
   	transform:translateY(-50%);
 }
 .article-title{
-  	font-family:"Mr De Haviland", Nunito, Arial, Helvetica, sans-serif;
+    font-family:"Mr De Haviland", Nunito, Arial, Helvetica, sans-serif;
 	font-size:6vw;
 	line-height:0;
 	color:rgb(250,250,250);
@@ -37,6 +38,7 @@ body > article > header{
 	text-align:center;
 }
 .article-subtitle{
+    padding-top:25px;
   	font-family:Nunito, Arial, Helvetica, sans-serif;
   	font-size:2vw;
     font-weight:200;
@@ -44,7 +46,68 @@ body > article > header{
   	text-align:center;
 	color:rgb(250,250,250);
 }
+.article-subtitle a{
+    padding:15px 30px;
+    color:rgb(250,250,250);
+    opacity:60%;
+    text-decoration:none;
+    background-color:rgb(228,99,73);
+    border-radius:20px;
+}
+.article-subtitle a:hover{
+    color:rgb(250,250,250);
+    opacity:100%;
+    transition:opacity 1s;
+}
+.about{
+    margin:auto;
+    width:50%;
+    text-align:center;
+    padding:150px 0 150px 0;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    font-size:20px;
+    line-height:35px;
+    color:rgb(250,250,250);
+}
+.about h1{
+    padding-bottom:20px;
+    font-family:"Mr De Haviland", Nunito, Arial, Helvetica, sans-serif;
+    font-size:5vw;
+    color:rgb(250,250,250);
+}
+.about h6{
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:300;
+    text-transform:uppercase;
+}
+.presentation{
+    background-color:rgb(31,20,92);
+}
+.contribute{
+    margin:auto;
+    width:50%;
+    text-align:center;
+    padding-top:150px;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    font-size:20px;
+    line-height:35px;
+    color:rgb(250,250,250);
+}
+.contribute h1{
+    padding-bottom:20px;
+    font-family:"Mr De Haviland", Nunito, Arial, Helvetica, sans-serif;
+    font-size:5vw;
+    color:rgb(250,250,250);
+}
+.contribute h6{
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight:300;
+    text-transform:uppercase;
+}
 .count_total{
+    margin-top:100px;
     display:flex;
     font-family:Nunito, Arial, Helvetica, sans-serif;
     justify-content:center;
