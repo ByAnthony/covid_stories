@@ -1,39 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Edit Memory</h1>
+<article class="main-contents">
+
+    <h1>Edit your memory</h1>
 
         <form action="/memories/{{memory.id}}/" method="post">
-            <div>
-                <p><label for="title">Title</label></p>
+            <div class="label">
+                <p><label for="title">Your title</label></p>
                 <input type="text" id="title" name="title" value="{{memory.title}}" required autofocus>
             </div>
-            <div>
-                <label for="name">Name</label>
+            <div class="label">
+                <p><label for="name">Your name</label></p>
                 <select id="contributor" name="contributor_id">
                     {% for contributor in contributors %}
                     <option value="{{contributor.id}}" {% if memory.contributor.id == contributor.id %} selected="selected" {% endif %}>{{contributor.first_name}} {{contributor.last_name}}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div>
-                <p><label for="story">Story</label></p>
+            <div class="label">
+                <p><label for="story">Your story</label></p>
                 <textarea id="story" name="story" value="{{memory.story}}" required></textarea>
             </div>
-            <div>
-                <p><label for="date">Date</label></p>
+            <div class="label">
+                <p><label for="date">Your date</label></p>
                 <input type="date" id="date" name="date" value="{{memory.date}}" required>
             </div>
-            <div>
-                <label for="charity">Charity</label>
+            <div class="label">
+                <p><label for="charity">Your charity</label></p>
                 <select id="charity" name="charity_id">
                     {% for charity in charities %}
                     <option value="{{charity.id}}" {% if memory.charity.id == charity.id %} selected="selected" {% endif %}>{{charity.name}}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div>
-                <button type="submit">Edit Memory</button>
-            </div>
+                <button class="add-button" type="submit">Edit Memory</button>
         </form>
 
+</article>
 {% endblock %}

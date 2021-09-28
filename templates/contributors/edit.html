@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Edit Contributor</h1>
+<article class="main-contents">
+
+    <h1>Edit contributor</h1>
 
         <form action="/contributors/{{contributor.id}}/" method="post">
-            <div>
-                <p><label for="first_name">First_name</label></p>
+            <div class="label">
+                <p><label for="first_name">What is your first name?</label></p>
                 <input type="text" id="first_name" name="first_name" value="{{contributor.first_name}}" required autofocus>
             </div>
-            <div>
-                <p><label for="last_name">Last_name</label></p>
+            <div class="label">
+                <p><label for="last_name">Your last name?</label></p>
                 <input type="text" id="last_name" name="last_name" value="{{contributor.last_name}}" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="age">How old are you?</label></p>
                 <input type="text" id="age" name="age" value="{{contributor.age}}" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="profession">What is your profession?</label></p>
                 <input type="text" id="profession" name="profession" value="{{contributor.profession}}" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="address">Where do you live?</label></p>
                 <input type="text" id="address" name="address" value="{{contributor.address}}" required>
             </div>
-            <div>
-                <button type="submit">Edit Account</button>
-            </div>
+                <button class="add-button" type="submit">Edit your profile</button>
         </form>
 
+</article>
 {% endblock %}

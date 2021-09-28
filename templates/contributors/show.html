@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+<article class="main-contents">
+
     <h1>{{contributor.first_name}} {{contributor.last_name}}</h1>
+
+    <section class="link-button">
+        <a href="/contributors/{{contributor.id}}/edit/">Edit</a>
+    </section>
+
         <div>
             <p>{{contributor.age}} years old, {{contributor.address}}, {{contributor.profession}}</p>
         </div>
@@ -26,8 +33,10 @@
         <div>
             
         </div>
-        <form class="delete-form" action="/contributors/{{contributor.id}}/delete/" method="post">
-            <button>Delete Contributor</button>
+        <form action="/contributors/{{contributor.id}}/delete/" method="post">
+            <button class="delete-button">Delete Contributor</button>
         </form>
         <p><a href="/contributors/{{contributor.id}}/edit/">Edit</a></p>
+
+</article>
 {% endblock %}

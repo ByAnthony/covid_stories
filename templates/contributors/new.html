@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>New Contributor</h1>
+<article class="main-contents">
+
+    <h1>New contributor</h1>
 
         <form action="/contributors/" method="post">
-            <div>
-                <p><label for="first_name">First_name</label></p>
-                <input type="text" id="first_name" name="first_name" placeholder="First name" required autofocus>
+            <div class="label">
+                <p><label for="first_name">What is your first name?</label></p>
+                <input type="text" id="first_name" name="first_name" placeholder="Your first name" required autofocus>
             </div>
-            <div>
-                <p><label for="last_name">Last_name</label></p>
-                <input type="text" id="last_name" name="last_name" placeholder="Last name" required>
+            <div class="label">
+                <p><label for="last_name">Your last name?</label></p>
+                <input type="text" id="last_name" name="last_name" placeholder="Your last name" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="age">How old are you?</label></p>
                 <input type="text" id="age" name="age" placeholder="Your Age" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="profession">What is your profession?</label></p>
                 <input type="text" id="profession" name="profession" placeholder="Your Profession" required>
             </div>
-            <div>
+            <div class="label">
                 <p><label for="address">Where do you live?</label></p>
                 <input type="text" id="address" name="address" placeholder="Your Town or City" required>
             </div>
-            <div>
-                <button type="submit">Create Account</button>
-            </div>
+                <button class="add-button" type="submit">Create profile</button>
         </form>
 
+</article>
 {% endblock %}
