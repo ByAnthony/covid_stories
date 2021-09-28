@@ -3,6 +3,7 @@ from models.event import Event
 
 import repositories.charity_repository as charity_repository
 
+
 def save(event):
     sql = "INSERT INTO events (name, description, charity_id, date) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [event.name, event.description, event.charity.id, event.date]
@@ -13,7 +14,7 @@ def save(event):
 
 def select_all():
     events = []
-    sql = "SELECT * FROM events ORDER BY date DESC"
+    sql = "SELECT * FROM events"
     results = run_sql(sql)
 
     for row in results:

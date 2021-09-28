@@ -19,9 +19,10 @@ def show(id):
     contributor = contributor_repository.select(id)
     charities = contributor_repository.charities(contributor)
     memories = contributor_repository.memories(contributor)
+    tickets = contributor_repository.tickets(contributor)
     count_memories = len(memories)
     contributor_name = contributor.first_name + " " + contributor.last_name
-    return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charities=charities, memories=memories, count_memories=count_memories)
+    return render_template("contributors/show.html", title=contributor_name, contributor=contributor, charities=charities, memories=memories, tickets=tickets, count_memories=count_memories)
 
 
 @contributors_blueprint.route("/contributors/new/")

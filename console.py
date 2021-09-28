@@ -4,11 +4,13 @@ from models.charity import Charity
 from models.contributor import Contributor
 from models.memory import Memory
 from models.event import Event
+from models.ticket import Ticket
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
 import repositories.memory_repository as memory_repository
 import repositories.event_repository as event_repository
+import repositories.ticket_repository as ticket_repository
 
 
 charity_1 = Charity("NHS Charities Together", "We are the national independent charity caring for the NHS and we’re here for everyone who loves the NHS. Together with a network of over 240 NHS charities across the UK, we provide the extra support needed to care for NHS staff, patients and communities.", "https://nhscharitiestogether.co.uk")
@@ -38,6 +40,9 @@ event_2 = Event("Loch Swimming", "Swim for charity", charity_2, "2022-04-05")
 event_repository.save(event_2)
 event_3 = Event("Marathon", "Run for charity", charity_3, "2022-06-23")
 event_repository.save(event_3)
+
+ticket_1 = Ticket(event_1, contributor_1)
+ticket_repository.save(ticket_1)
 
 
 pdb.set_trace()

@@ -34,6 +34,20 @@
         {% endfor %}
     </div>
 
+    <div>
+        {% if tickets %}
+            <h2>Ready to go</h2>
+        {% endif %}
+        {% for ticket in tickets %}
+                <div class="ticket-event"><a href="/tickets/{{ticket.event.id}}/">{{ticket.event.name}}</a></div>
+                <div class="ticket_event-float">
+                    <form action="/tickets/{{ticket.id}}/delete/" method="post">
+                        <button class="unbook-button">Unbook</button>
+                    </form>
+                </div>
+        {% endfor %}
+    </div>
+
         <form action="/contributors/{{contributor.id}}/delete/" method="post">
             <button class="delete-button">Delete contributor</button>
         </form>

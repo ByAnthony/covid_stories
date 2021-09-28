@@ -210,6 +210,25 @@ textarea:focus{
     transition:1s;
     background-color:rgb(228,99,73);
 }
+.unbook-button{
+    padding:20px 35px 20px 35px;
+    font-family:Nunito, Arial, Helvetica, sans-serif;
+    font-size:20px;
+    font-weight:400;
+    color:rgb(66,33,165);
+    opacity:50%;
+    text-align:center;
+    border:1px solid rgb(66,33,165);
+    border-radius:25px;
+    background-color:rgb(9,6,72);
+    margin-bottom:35px;
+}
+.unbook-button:hover{ 
+    color:rgb(228,99,73);
+    opacity:100%;
+    transition:1s;
+    border:1px solid rgb(228,99,73);
+}
 footer{
     padding:50px;
 }

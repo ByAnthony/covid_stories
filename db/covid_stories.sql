@@ -1,3 +1,4 @@
+DROP TABLE tickets;
 DROP TABLE events;
 DROP TABLE memories;
 DROP TABLE contributors;
@@ -35,3 +36,9 @@ CREATE TABLE events (
     charity_id INT REFERENCES charities(id) ON DELETE CASCADE,
     date DATE
 );
+
+CREATE TABLE tickets (
+    id SERIAL PRIMARY KEY,
+    event_id INT REFERENCES events(id) ON DELETE CASCADE,
+    contributor_id INT REFERENCES contributors(id) ON DELETE CASCADE
+)

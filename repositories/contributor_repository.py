@@ -2,9 +2,11 @@ from db.run_sql import run_sql
 from models.contributor import Contributor
 from models.charity import Charity
 from models.memory import Memory
+from models.ticket import Ticket
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
+import repositories.event_repository as event_repository
 
 
 def save(contributor):
@@ -73,3 +75,18 @@ def memories(contributor):
         memory = Memory(row['title'], contributor, row['story'], row['date'], charity, row['id'])
         memories.append(memory)
     return memories
+
+
+def tickets(contributor):
+    tickets = []
+    sql = "SELECT contributors.*, tickets.* FROM contributors LEFT JOIN tickets ON contributors.id=tickets.contributor_id WHERE contributor_id=%s"
+    values = [contributor.id]
+    result = run_sql(sql, values)
+
+    for row in result:
+        event = event_repository.select(row['event_id'])
+        contributor = contributor_repository.select(row['contributor_id'])
+        ticket = Ticket(event, contributor, row['id'])
+        tickets.append(ticket)
+    return tickets
+

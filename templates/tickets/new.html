@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="main-contents">
+
+    <h1>Book an event</h1>
+
+        <form action="/tickets/" method="post">
+            <div class="label">
+                <p><label for="event">What event do you want to book?</label></p>
+                <select id="event" name="event_id">
+                    {% for event in events %}
+                    <option value="{{event.id}}">{{event.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="label">
+                <p><label for="contributor">Who will attend?</label></p>
+                <select id="contributor" name="contributor_id">
+                    {% for contributor in contributors %}
+                    <option value="{{contributor.id}}">{{contributor.first_name}} {{contributor.last_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+                <button class="add-button" type="submit">Book</button>
+        </form>
+
+</article>
+{% endblock %}

@@ -3,6 +3,7 @@ from controllers.charity_controller import charities_blueprint
 from controllers.contributor_controller import contributors_blueprint
 from controllers.memory_controller import memories_blueprint
 from controllers.event_controller import events_blueprint
+from controllers.ticket_controller import tickets_blueprint
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
@@ -16,6 +17,7 @@ app.register_blueprint(charities_blueprint)
 app.register_blueprint(contributors_blueprint)
 app.register_blueprint(memories_blueprint)
 app.register_blueprint(events_blueprint)
+app.register_blueprint(tickets_blueprint)
 
 
 @app.route('/')

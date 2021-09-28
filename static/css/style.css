@@ -172,7 +172,7 @@ body > article > header{
     justify-content:center;
     gap:50px;
 }
-.flex-charities a {
+.flex-charities a{
     margin:10px;
     padding:20px 35px 20px 35px;
     font-size:25px;
@@ -261,3 +261,28 @@ body > article > header{
     transition:opacity 1s;
 }
 /* CONTRIBUTORS */
+.ticket-event{
+    float:left;
+    margin-top:14px;
+    width:35%;
+}
+.ticket-event-float{
+    float:right;
+}
+.ticket-event a{
+    padding:20px 35px 20px 35px;
+    font-size:25px;
+    font-weight:300;
+    color:rgb(220,220,220);
+    opacity:60%;
+    text-align:center;
+    background-color:rgb(11,10,85);
+    border-radius:30px;
+    text-decoration:none;
+  }
+.ticket-event a:hover{ 
+    color:rgb(220,220,220);
+    opacity:100%;
+    transition:opacity 1s;
+    background-color:rgb(31,20,92);
+}
