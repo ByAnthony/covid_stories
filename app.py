@@ -2,10 +2,12 @@ from flask import Flask, render_template
 from controllers.charity_controller import charities_blueprint
 from controllers.contributor_controller import contributors_blueprint
 from controllers.memory_controller import memories_blueprint
+from controllers.event_controller import events_blueprint
 
 import repositories.charity_repository as charity_repository
 import repositories.contributor_repository as contributor_repository
 import repositories.memory_repository as memory_repository
+import repositories.event_repository as event_repository
 
 
 app = Flask(__name__)
@@ -13,6 +15,7 @@ app = Flask(__name__)
 app.register_blueprint(charities_blueprint)
 app.register_blueprint(contributors_blueprint)
 app.register_blueprint(memories_blueprint)
+app.register_blueprint(events_blueprint)
 
 
 @app.route('/')

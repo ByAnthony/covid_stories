@@ -19,35 +19,42 @@
         <a href="/charities/{{charity.id}}/edit/">Edit</a>
     </section>
 
+    <div>
+        {% if count_contributors == 1 %}
+            <h2>{{count_contributors}} Supporter</h2>
+        {% elif count_contributors > 1 %}
+            <h2>{{count_contributors}} Supporters</h2>
+        {% else %}
+        {% endif %}
+        {% for memory in memories %}
+            <div class="flex-charities">
+                <div class="charity"><a href="/contributors/{{memory.contributor.id}}/">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></div>
+            </div>
+        {% endfor %}
+
+        {% if count_contributors == 1 %}
+            <h2>{{count_contributors}} Memory</h2>
+        {% elif count_contributors > 1 %}
+            <h2>{{count_contributors}} Memories</h2>
+        {% else %}
+        {% endif %}
+        {% for memory in memories %}
+            <div class="flex-charities">
+                <div class="charity"><a href="/memories/{{memory.id}}/">{{memory.title}}</a></div>
+            </div>
+        {% endfor %}
+    </div>
+
     {% if events %}
     <section class="events">
         <h2>Upcoming events</h2>
         {% for event in events %}
-            <div>
-                <h3>{{event.name}}</h3>
-                <p>{{event.description}}</p>
-                <p>{{event.convert_date()}}</p>
+            <div class="flex-charities">
+                <div class="charity"><a href="/events/{{event.id}}/">{{event.name}}</a></div>
             </div>
         {% endfor %}
     </section>
     {% endif %}
-
-
-        <div>
-            {% if count_contributors == 1 %}
-                <p>{{count_contributors}} Supporter</p>
-            {% elif count_contributors > 1 %}
-                <p>{{count_contributors}} Supporters</p>
-            {% else %}
-            {% endif %}
-            {% if memories %}
-                <p>Supported by</p>
-            {% endif %}
-            {% for memory in memories %}
-                <p><a href="/contributors/{{memory.contributor.id}}/">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></p>
-                <p><a href="/memories/{{memory.id}}/">{{memory.title}}</a></p>
-            {% endfor %}
-        </div>
 
         <form action="/charities/{{charity.id}}/delete/" method="post">
             <button class="delete-button">Delete Charity</button>

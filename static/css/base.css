@@ -189,6 +189,27 @@ textarea:focus{
     transition:1s;
     background-color:rgb(228,99,73);
 }
+.event-button{
+    padding:10px 0 10px 0;
+}
+.event-button a{
+    margin:10px;
+    padding:20px 35px 20px 35px;
+    font-size:20px;
+    font-weight:400;
+    color:rgb(220,220,220);
+    opacity:50%;
+    text-align:center;
+    background-color:rgb(66,33,165);
+    border-radius:25px;
+    text-decoration:none;
+}
+.event-button a:hover{ 
+    color:rgb(220,220,220);
+    opacity:100%;
+    transition:1s;
+    background-color:rgb(228,99,73);
+}
 footer{
     padding:75px;
 }

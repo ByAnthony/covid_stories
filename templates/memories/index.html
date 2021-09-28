@@ -9,13 +9,15 @@
         <a href="/memories/new/">Contribute</a><a href="/contributors/">All contributors</a>
     </section>
 
+</article>
     {% for memory in memories %}
-        <div class="flex-container">
-            <div>{{memory.convert_date()}}</div>
-            <div><a href="/contributors/{{memory.contributor.id}}">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></div>
-            <div><a href="/memories/{{memory.id}}">{{memory.title}}</a></div>
+        <div class="flex-memories">
+            <div class="memory">
+                <div class="memory-date">{{memory.convert_date()}}</div>
+                <div class="memory-title"><a href="/memories/{{memory.id}}">{{memory.title}}</a></div>
+                <div class="memory-contributor"><a href="/contributors/{{memory.contributor.id}}">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a></div>
+            </div>
         </div>
     {% endfor %}
 
-</article>
 {% endblock %}

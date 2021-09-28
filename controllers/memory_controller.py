@@ -1,4 +1,3 @@
-import re
 from flask import Flask, Blueprint, render_template, request, redirect
 from models.memory import Memory
 
@@ -70,5 +69,4 @@ def update_memory(id):
     charity = charity_repository.select(charity_id)
     memory = Memory(title, contributor, story, date, charity, id)
     memory_repository.update(memory)
-    memory_title = memory.title
-    return render_template("/memories/show.html", title=memory_title, memory=memory, memory_title=memory_title)
+    return redirect("/memories")

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="main-contents">
+
+    <section class="link-button">
+        <a href="/charities/{{event.charity.id}}/">{{event.charity.name}}</a>
+    </section>
+    
+    <h1>{{event.name}}</h1>
+    <h3>{{event.convert_date()}}</h3>
+    <p>{{event.description}}</p>
+
+    <section class="link-button">
+        <a href="/events/{{event.id}}/edit/">Edit</a>
+        <a href="/events/new/">Create an event</a>
+    </section>
+
+    <form action="/events/{{event.id}}/delete/" method="post">
+        <button class="delete-button">Delete event</button>
+    </form>
+
+</article>
+{% endblock %}

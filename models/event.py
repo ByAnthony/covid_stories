@@ -2,13 +2,11 @@ import datetime
 
 class Event():
     
-    def __init__(self, name, description, charity, fee, date, id=None):
+    def __init__(self, name, description, charity, date, id=None):
         self.name = name
         self.description = description
         self.charity = charity
-        self.fee = fee
         self.date = date
-        self.guests = []
         self.id = id
 
     def convert_date(self):

@@ -85,6 +85,6 @@ def events(charity):
 
     for row in result:
         charity = charity_repository.select(row['charity_id'])
-        event = Event(row['name'], row['description'], charity, row['fee'], row['date'], row['id'])
+        event = Event(row['name'], row['description'], charity, row['date'], row['id'])
         events.append(event)
     return events

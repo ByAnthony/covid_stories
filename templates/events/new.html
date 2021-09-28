@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="main-contents">
+
+    <h1>New event</h1>
+
+        <form action="/events/" method="post">
+            <div class="label">
+                <p><label for="name">What is your event name?</label></p>
+                <input type="text" id="name" name="name" placeholder="Your event name" required autofocus>
+            </div>
+            <div class="label">
+                <p><label for="description">What is your event about?</label></p>
+                <input type="text" id="description" name="description" placeholder="Add a description" required>
+            </div>
+            <div class="label">
+                <p><label for="date">When do you plan your event?</label></p>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="label">
+                <p><label for="charity">Who is the organiser?</label></p>
+                <select id="charity" name="charity_id">
+                    {% for charity in charities %}
+                    <option value="{{charity.id}}">{{charity.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+                <button class="add-button" type="submit">Create event</button>
+        </form>
+
+</article>
+{% endblock %}

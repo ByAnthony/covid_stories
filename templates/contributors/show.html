@@ -3,40 +3,40 @@
 <article class="main-contents">
 
     <h1>{{contributor.first_name}} {{contributor.last_name}}</h1>
+    <p>{{contributor.age}} years old<br>{{contributor.address}}</p>
 
     <section class="link-button">
         <a href="/contributors/{{contributor.id}}/edit/">Edit</a>
     </section>
 
-        <div>
-            <p>{{contributor.age}} years old, {{contributor.address}}, {{contributor.profession}}</p>
-        </div>
-        <div>
-            {% if charities %}
-                <p>Supports</p>
-            {% endif %}
-            {% for charity in charities %}
-                <a href="/charities/{{charity.id}}/">{{charity.name}}</a>
-            {% endfor %}
-        </div>
-        <div>
-            {% if count_memories == 1 %}
-                <p>{{count_memories}} Memory</p>
-            {% elif count_memories > 1 %}
-                <p>{{count_memories}} Memories</p>
-            {% else %}
-            {% endif %}
-            {% for memory in memories %}
-                <a href="/memories/{{memory.id}}/">{{memory.title}}</p>
-            {% endfor %}
-        </div>
-        <div>
-            
-        </div>
+    <div>
+        {% if charities %}
+            <h2>Supports</h2>
+        {% endif %}
+        {% for charity in charities %}
+            <div class="flex-charities">
+                <div class="charity"><a href="/charities/{{charity.id}}/">{{charity.name}}</a></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {% if count_memories == 1 %}
+            <h2>{{count_memories}} Memory</h2>
+        {% elif count_memories > 1 %}
+            <h2>{{count_memories}} Memories</h2>
+        {% else %}
+        {% endif %}
+        {% for memory in memories %}
+            <div class="flex-charities">
+                <div class="charity"><a href="/memories/{{memory.id}}/">{{memory.title}}</a></div>
+            </div>
+        {% endfor %}
+    </div>
+
         <form action="/contributors/{{contributor.id}}/delete/" method="post">
-            <button class="delete-button">Delete Contributor</button>
+            <button class="delete-button">Delete contributor</button>
         </form>
-        <p><a href="/contributors/{{contributor.id}}/edit/">Edit</a></p>
 
 </article>
 {% endblock %}
