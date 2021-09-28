@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<article class="charities">
+<article class="main-contents">
 
     {% if charity.name == "NHS Charities Together" %}
         <img src="/static/images/logo/nhs.png" height="150" style="padding-bottom:20px">
@@ -12,11 +12,26 @@
         <h1>{{charity.name}}</h1>
     {% endif %}
 
-        <p>{{charity.description}}</p>
+    <p>{{charity.description}}</p>
 
-        <section class="add-button">
-            <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a><a href="/charities/{{charity.id}}/edit/">Edit</a>
-        </section>
+    <section class="link-button">
+        <a href="{{charity.website}}" target="_blank" rel="noopener noreferrer">Discover more</a>
+        <a href="/charities/{{charity.id}}/edit/">Edit</a>
+    </section>
+
+    {% if events %}
+    <section class="events">
+        <h2>Upcoming events</h2>
+        {% for event in events %}
+            <div>
+                <h3>{{event.name}}</h3>
+                <p>{{event.description}}</p>
+                <p>{{event.convert_date()}}</p>
+            </div>
+        {% endfor %}
+    </section>
+    {% endif %}
+
 
         <div>
             {% if count_contributors == 1 %}
@@ -33,16 +48,9 @@
                 <p><a href="/memories/{{memory.id}}/">{{memory.title}}</a></p>
             {% endfor %}
         </div>
-        <div>
-            {% for event in events %}
-                <p>{{event.name}}</p>
-                <p>{{event.description}}</p>
-                <p>{{event.convert_date()}}</p>
-            {% endfor %}
-        </div>
 
         <form action="/charities/{{charity.id}}/delete/" method="post">
-            <button>Delete Charity</button>
+            <button class="delete-button">Delete Charity</button>
         </form>
 
 </article>

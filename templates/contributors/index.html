@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Our Contributors</h1>
-    {% for contributor in contributors %}
-        <div class="flex-container">
-            <div><a href="/contributors/{{contributor.id}}">{{contributor.first_name}} {{contributor.last_name}}</a></div>
+<article class="main-contents">
+
+    <h1>Our contributors</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <section class="charities-list">
+
+        {% for contributor in contributors %}
+        <div class="flex-charities">
+            <div class="charity"><a href="/contributors/{{contributor.id}}">{{contributor.first_name}} {{contributor.last_name}}</a></div>
         </div>
-    {% endfor %}
-        <div>
-            <a href="/contributors/new/">New Account</a>
-        </div>
+        {% endfor %}
+
+    </section>
+    
+    <section class="link-button">
+        <a href="/contributors/new/">New Account</a>
+    </section>
+
+</article>
 {% endblock %}

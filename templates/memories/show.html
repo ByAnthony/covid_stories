@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>{{memory.title}}</h1>
-    <a href="/contributors/{{memory.contributor.id}}/">By {{memory.contributor.first_name}} {{memory.contributor.last_name}}</a>
-    <h5>{{convert_date}}</h5>
-        <div>
-            <p>{{memory.story}}</p>
-        </div>
+<article class="main-contents">
+
+    <section class="link-button">
+        <a href="/contributors/{{memory.contributor.id}}/">{{memory.contributor.first_name}} {{memory.contributor.last_name}}</a>
+        +
         <a href="/charities/{{memory.charity.id}}/">{{memory.charity.name}}</a>
-        <form class="delete-form" action="/memories/{{memory.id}}/delete/" method="post">
-            <button>Delete Memory</button>
-        </form>
-        <p><a href="/memories/{{memory.id}}/edit/">Edit</a></p>
+    </section>
+
+    <h1>{{memory.title}}</h1>
+    <h3>{{memory.convert_date()}}</h3>
+
+    <p class="story">{{memory.story}}</p>
+
+    <section class="link-button">
+        <a href="/memories/{{memory.id}}/edit/">Edit</a>
+    </section>
+
+    <form action="/memories/{{memory.id}}/delete/" method="post">
+        <button class="delete-button">Delete Memory</button>
+    </form>
+
+</article>
 {% endblock %}

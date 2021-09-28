@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>New Charity</h1>
+<article class="main-contents">
+
+    <h1>Add your charity</h1>
 
         <form action="/charities/" method="post">
-            <div>
-                <p><label for="name">What is the name of your organisation?</label></p>
-                <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+            <div class="label">
+                <p><label for="name">What is the name of your charity?</label></p>
+                <input type="text" id="name" name="name" placeholder="Your name" required autofocus>
             </div>
-            <div>
-                <p><label for="description">What your organisation do?</label></p>
-                <textarea id="description" name="description" placeholder="Description" required></textarea>
+            <div class="label">
+                <p><label for="description">Tell us a wee bit more about what you do</label></p>
+                <textarea id="description" name="description" placeholder="Your description" required></textarea>
             </div>
-            <div>
-                <p><label for="website">What is your website?</label></p>
-                <input type="text" id="website" name="website" placeholder="Website" required>
+            <div class="label">
+                <p><label for="website">Where can you show your actions?</label></p>
+                <input type="text" id="website" name="website" placeholder="Your website" required>
             </div>
-            <div>
-                <button type="submit">Add your charity</button>
-            </div>
+            <button class="add-button" type="submit">Create</button>
         </form>
 
+</article>
 {% endblock %}

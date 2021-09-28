@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Your Memories</h1>
+<article class="main-contents">
+
+    <h1>Memories to read</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    <section class="link-button">
+        <a href="/memories/new/">Contribute</a><a href="/contributors/">All contributors</a>
+    </section>
+
     {% for memory in memories %}
         <div class="flex-container">
             <div>{{memory.convert_date()}}</div>
@@ -8,10 +16,6 @@
             <div><a href="/memories/{{memory.id}}">{{memory.title}}</a></div>
         </div>
     {% endfor %}
-        <div>
-            <a href="/memories/new/">Contribute</a>
-        </div>
-        <div>
-            <a href="/contributors/">See All contributors</a>
-        </div>
+
+</article>
 {% endblock %}
