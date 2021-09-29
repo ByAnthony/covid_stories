@@ -7,7 +7,7 @@ The objective was to build a full stack web application to put it into practice 
 
 ## Brief
 
-The brief was to produce an app that could be used to support charities during the hard time of Covid by sharing stories and memories, allowing a user to add, edit/update, remove memories/charities/events.
+The idea was to produce an app that could be used to support charities during the hard time of Covid by sharing stories and memories, allowing a user to add, edit/update, remove memories/charities/events.
 
 It is based on 
 
