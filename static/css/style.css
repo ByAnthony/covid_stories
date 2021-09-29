@@ -311,6 +311,7 @@ body > article > header{
     float:right;
 }
 .ticket-event a{
+    margin-right:20px;
     padding:20px 35px 20px 35px;
     font-size:25px;
     font-weight:300;
