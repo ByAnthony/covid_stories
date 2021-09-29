@@ -53,11 +53,11 @@
             <div class="flex-charities">
                 <div class="charity"><a href="/events/{{event.id}}/">{{event.name}}</a></div>
             </div>
-            <!-- <div class="charity"> -->
+            <div class="contributors-booked">
                 {% for contributor in booked_contributors %}
-                    <li>{{contributor.first_name}} {{contributor.last_name}}</li>
+                    <a href="/contributors/{{contributor.id}}/">{{contributor.first_name}} {{contributor.last_name}}</a>
                 {% endfor %}
-            <!-- </div> -->
+            </div>
         {% endfor %}
     </section>
     {% endif %}

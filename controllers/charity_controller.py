@@ -25,8 +25,7 @@ def show(id):
     events = charity_repository.events(charity)
     tickets = ticket_repository.select_all()
     charity_name = charity.name
-    # import pdb
-    # pdb.set_trace()
+    
     booked_contributors = []
     for contributor in contributors_all:
             for ticket in tickets:
