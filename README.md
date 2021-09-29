@@ -3,7 +3,7 @@
 
 This project was built for week 4 of the CodeClan Software Developer course.
 
-The objective was to build a full stack web application to put it into practice what was learnt in previous weeks. 
+The objective was to build a full stack web application. 
 
 ## Brief
 
