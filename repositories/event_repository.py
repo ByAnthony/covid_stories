@@ -43,6 +43,6 @@ def delete(id):
 
 
 def update(events):
-    sql = "UPDATE events SET (name, description, charity_id, date) = (%s, %s, %s) WHERE id=%s"
+    sql = "UPDATE events SET (name, description, charity_id, date) = (%s, %s, %s, %s) WHERE id=%s"
     values = [events.name, events.description, events.charity.id, events.date, events.id]
     run_sql(sql, values)

@@ -24,7 +24,7 @@ def create_ticket():
     contributor = contributor_repository.select(contributor_id)
     ticket = Ticket(event, contributor)
     ticket_repository.save(ticket)
-    return redirect("/charities")
+    return redirect("/contributors")
 
 
 @tickets_blueprint.route("/tickets/<id>/delete/", methods=['POST'])

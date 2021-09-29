@@ -32,7 +32,7 @@ CREATE TABLE memories (
 CREATE TABLE events (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    description VARCHAR(255),
+    description TEXT,
     charity_id INT REFERENCES charities(id) ON DELETE CASCADE,
     date DATE
 );

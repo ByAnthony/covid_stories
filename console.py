@@ -27,18 +27,18 @@ contributor_2 = Contributor("Robert", "Sponge", 43, "Ecologist", "Inverness")
 contributor_repository.save(contributor_2)
 contributor_3 = Contributor("Laureen", "Douglas", 35, "Software Developer", "Dundee")
 contributor_repository.save(contributor_3)
-contributor_4 = Contributor("Bruce", "McInnes", 62, "Builder", "Lochboisdale")
+contributor_4 = Contributor("David", "MacInnes", 62, "Builder", "Lochboisdale")
 contributor_repository.save(contributor_4)
 
 
 memory_1 = Memory("Lorem ipsum dolor", contributor_1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "2020-09-20", charity_2)
 memory_repository.save(memory_1)
 
-event_1 = Event("Hill Walking", "Walk for charity", charity_1, "2022-01-26")
+event_1 = Event("Hill walking", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", charity_1, "2022-01-26")
 event_repository.save(event_1)
-event_2 = Event("Loch Swimming", "Swim for charity", charity_2, "2022-04-05")
+event_2 = Event("Loch swimming", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", charity_2, "2022-04-05")
 event_repository.save(event_2)
-event_3 = Event("Marathon", "Run for charity", charity_3, "2022-06-23")
+event_3 = Event("Marathon", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", charity_3, "2022-06-23")
 event_repository.save(event_3)
 
 ticket_1 = Ticket(event_1, contributor_1)

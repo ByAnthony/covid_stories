@@ -261,10 +261,13 @@ body > article > header{
     transition:opacity 1s;
 }
 /* CONTRIBUTORS */
+.wrapper{
+    margin:0 auto;
+}
 .ticket-event{
     float:left;
     margin-top:14px;
-    width:35%;
+    padding-left:75px;
 }
 .ticket-event-float{
     float:right;

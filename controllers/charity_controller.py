@@ -2,6 +2,8 @@ from flask import Flask, Blueprint, render_template, request, redirect
 from models.charity import Charity
 
 import repositories.charity_repository as charity_repository
+import repositories.ticket_repository as ticket_repository
+import repositories.contributor_repository as contributor_repository
 
 
 charities_blueprint = Blueprint("charity", __name__)
@@ -17,11 +19,21 @@ def charities():
 def show(id):
     charity = charity_repository.select(id)
     contributors = charity_repository.contributors(charity)
+    contributors_all = contributor_repository.select_all()
     count_contributors = len(contributors)
     memories = charity_repository.memories(charity)
     events = charity_repository.events(charity)
+    tickets = ticket_repository.select_all()
     charity_name = charity.name
-    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, count_contributors=count_contributors, memories=memories, events=events)
+    # import pdb
+    # pdb.set_trace()
+    booked_contributors = []
+    for contributor in contributors_all:
+            for ticket in tickets:
+                if contributor.id == ticket.contributor.id and ticket.event.charity.id == charity.id:
+                    booked_contributors.append(contributor)
+    
+    return render_template("charities/show.html", title=charity_name, charity=charity, contributors=contributors, count_contributors=count_contributors, memories=memories, events=events, booked_contributors=booked_contributors)
 
 
 @charities_blueprint.route("/charities/new/")
