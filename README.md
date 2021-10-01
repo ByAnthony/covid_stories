@@ -1,9 +1,7 @@
 
 # Covid Stories
 
-This project was built for week 5 of the CodeClan Software Developer course.
-
-The objective was to build a full stack web application. 
+This project was built for week 5 of the CodeClan Software Developer course. The objective was to build a full stack web application. 
 
 ## Contents
 * [Brief](#Brief)
