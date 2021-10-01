@@ -1,48 +1,45 @@
 
 # Covid Stories
 
-This project was built for week 4 of the CodeClan Software Developer course.
+This project was built for week 5 of the CodeClan Software Developer course.
 
 The objective was to build a full stack web application. 
 
+## Contents
+* [Brief](#Brief)
+* [Technologies](#Technologies)
+* [Setup](#Setup)
+
 ## Brief
 
-The idea was to produce an app that could be used to support charities during the hard time of Covid by sharing stories and memories, allowing a user to add, edit/update, remove memories/charities/events, and book/remove events.
+The idea was to produce an app that could be used to support charities by sharing memories of contributors' experience during Covid.
 
-It is based on 
+From the contributors side:
+- The app should allow the user to create, read, update and delete their profile;
+- The user should be able to create, read, update and delete memories;
+- Each memory should be associated with a charity;
+- Their profile should display the charities supported, the memories published and the events they have booked in.
 
->### Travel Bucket List
->Build an app to track someone's travel adventures.
+From the charities side:
+- The app should allow the charity to create, read, update and delete their profile;
+- The charity should be able to create, read, update and delete events;
+- Their profile should display their supporters, the memories published and the contributors booked in in an event.
 
->MVP:
->The app should allow the user to track countries and cities they want to visit and those they have visited.
->The user should be able to create and edit countries
->Each country should have one or more cities to visit
->The user should be able to create and delete entries for cities
->The app should allow the user to mark destinations as visited or still to see
+## Technologies
+The project was created with:
+- Python 3
+- psycog2
+- postgreSQL
+- HTML/CSS
+- Flask
 
->Possible Extensions:
->Have separate pages for destinations visited and those still to visit
->Add sights to the destination cities
->Search for destination by continent, city or country
->Any other ideas you might come up with
-
-It was built using Flask, PostgreSQL, psycopg2, Python and HTML/CSS.
-
-## Setup and running
-
-Pre-requisites and usage
-
+## Setup
+Pre-requisites and usage:
 - Install Python3 and pip3
-
 - Install postgreSQL
-
 - Install Flask: pip3 install flask
-
 - Install psycopg2: pip3 install psycopg2
-
 - Clone/download the project and navigate to that directory in your terminal client
-
 - Create the database: 
 ```
 createdb covid_stories
@@ -52,9 +49,8 @@ createdb covid_stories
 psql -d stories -f db/covid_stories.sql
 ```
 - Import the seed console: python3 console.py
-
 - Start Flask: 
 ```
 flask run
 ```
-- Navigate to the site in your browser at http://localhost:5000
+- Navigate to the site in your browser at http://localhost:5000/
