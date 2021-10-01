@@ -8,6 +8,8 @@
         <img src="/static/images/logo/shelter.png" height="150" style="padding-bottom:20px">
     {% elif charity.name == "Mind" %}
         <img src="/static/images/logo/mind.png" height="150" style="padding-bottom:20px">
+    {% elif charity.name == "Age Scotland" %}
+        <img src="/static/images/logo/age-scotland.png" height="150" style="padding-bottom:20px">
     {% else %}
         <h1>{{charity.name}}</h1>
     {% endif %}
@@ -51,12 +53,7 @@
         <h2>Organised by your charity</h2>
         {% for event in events %}
             <div class="flex-charities">
-                <div class="charity"><a href="/events/{{event.id}}/">{{event.name}}</a></div>
-            </div>
-            <div class="contributors-booked">
-                {% for contributor in booked_contributors %}
-                    <a href="/contributors/{{contributor.id}}/">{{contributor.first_name}} {{contributor.last_name}}</a>
-                {% endfor %}
+                <div class="events-item"><a href="/events/{{event.id}}/">{{event.name}}</a></div>
             </div>
         {% endfor %}
     </section>

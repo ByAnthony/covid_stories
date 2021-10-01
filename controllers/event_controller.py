@@ -2,8 +2,9 @@ from flask import Flask, Blueprint, render_template, request, redirect
 from models.event import Event
 
 import repositories.charity_repository as charity_repository
-import repositories.contributor_repository as contributor_repository
+import repositories.ticket_repository as ticket_repository
 import repositories.event_repository as event_repository
+import repositories.contributor_repository as contributor_repository
 
 
 events_blueprint = Blueprint("events", __name__)
@@ -12,8 +13,10 @@ events_blueprint = Blueprint("events", __name__)
 @events_blueprint.route("/events/<id>/")
 def show(id):
     event = event_repository.select(id)
+    tickets = ticket_repository.select_all()
     event_name = event.name
-    return render_template("events/show.html", title=event_name, event=event)
+
+    return render_template("events/show.html", title=event_name, event=event, tickets=tickets)
 
 
 @events_blueprint.route("/events/new/")

@@ -15,6 +15,15 @@
         <a href="/tickets/new/">Book</a>
     </section>
 
+    <h2>Join us</h2>
+    {% for ticket in tickets %} 
+        {% if ticket.event.id == event.id %}
+            <div class="flex-charities">
+                <div class="events-item"><a href="/contributors/{{ticket.contributor.id}}/">{{ticket.contributor.first_name}} {{ticket.contributor.last_name}}</a></div>
+            </div>
+        {% endif %}
+    {% endfor %}
+
     <form action="/events/{{event.id}}/delete/" method="post">
         <button class="delete-button">Delete event</button>
     </form>

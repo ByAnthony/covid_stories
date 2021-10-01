@@ -50,6 +50,7 @@ body > article > header{
     padding:15px 30px;
     color:rgb(250,250,250);
     opacity:60%;
+    transition:1s;
     text-decoration:none;
     background-color:rgb(228,99,73);
     border-radius:20px;
@@ -57,11 +58,10 @@ body > article > header{
 .article-subtitle a:hover{
     color:rgb(250,250,250);
     opacity:100%;
-    transition:opacity 1s;
 }
 .about{
     margin:auto;
-    width:50%;
+    width:55%;
     text-align:center;
     padding:150px 0 150px 0;
     font-family:Nunito, Arial, Helvetica, sans-serif;
@@ -122,6 +122,7 @@ body > article > header{
     font-weight:300;
     color:rgb(220,220,220);
     opacity:60%;
+    transition:1s;
     text-align:center;
     background-color:rgb(11,10,85);
     border-radius:30px;
@@ -130,7 +131,6 @@ body > article > header{
 .count_total > ul > li > a:hover{ 
     color:rgb(220,220,220);
     opacity:100%;
-    transition:opacity 1s;
     background-color:rgb(31,20,92);
 }
 /* CONTENTS */
@@ -204,6 +204,7 @@ body > article > header{
     font-weight:300;
     color:rgb(220,220,220);
     opacity:60%;
+    transition:1s;
     text-align:center;
     background-color:rgb(11,10,85);
     border-radius:30px;
@@ -212,7 +213,6 @@ body > article > header{
 .flex-charities a:hover{ 
     color:rgb(220,220,220);
     opacity:100%;
-    transition:opacity 1s;
     background-color:rgb(31,20,92);
 }
 .charity{
@@ -221,20 +221,27 @@ body > article > header{
 }
 .events{
     margin:75px 0 75px 0;
-    padding:75px 0 75px 0;
+    padding:75px 0 60px 0;
     background-color:rgb(228,99,73);
     border-radius:35px;
 }
+.events-item{
+    height:100px;
+    flex:3fr;
+}
+.contributors-booked{
+    padding-bottom:50px;
+}
 .contributors-booked a{
-    padding:20px;
+    padding:0 25px 0 25px;
     color:rgb(250,250,250);
     opacity:60%;
+    transition:1s;
     text-decoration:none;
 }
 .contributors-booked a:hover{
     color:rgb(250,250,250);
     opacity:100%;
-    transition:opacity 1s;
     text-decoration:none;
 }
 /* MEMORIES */
@@ -244,13 +251,12 @@ body > article > header{
     text-align:justify center;
 }
 .flex-memories{
-    margin-bottom:100px;
+    margin-bottom:10px;
     display:inline-flex;
     flex-wrap:wrap;
     font-family:Nunito, Arial, Helvetica, sans-serif;
     align-content:center;
     justify-content:center;
-    gap:30px;
 }
 .memory{
     align-items:center;
@@ -278,24 +284,24 @@ body > article > header{
     font-weight:600;
     color:rgb(228,99,73);
     opacity:50%;
+    transition:1s;
     text-decoration:none;
 }
 .memory-title a:hover{
     color:rgb(228,99,73);
     opacity:100%;
-    transition:opacity 1s;
 }
 .memory-contributor a{
     font-size:20px;
     font-weight:400;
     color:rgb(250,250,250);
     opacity:50%;
+    transition:1s;
     text-decoration:none;
 }
 .memory-contributor a:hover{
     color:rgb(250,250,250);
     opacity:100%;
-    transition:opacity 1s;
 }
 /* CONTRIBUTORS */
 .wrapper{
@@ -317,6 +323,7 @@ body > article > header{
     font-weight:300;
     color:rgb(220,220,220);
     opacity:60%;
+    transition:1s;
     text-align:center;
     background-color:rgb(11,10,85);
     border-radius:30px;
@@ -325,6 +332,5 @@ body > article > header{
 .ticket-event a:hover{ 
     color:rgb(220,220,220);
     opacity:100%;
-    transition:opacity 1s;
     background-color:rgb(31,20,92);
 }
