@@ -3,6 +3,8 @@
 
 This project was built for week 5 of the CodeClan Software Developer course. The objective was to build a full stack web application. 
 
+![](https://github.com/ByAnthony/covid_stories/blob/main/static/images/Screenshot%202021-10-01%20at%2010.40.01.png?raw=true)
+
 ## Contents
 * [Brief](#Brief)
 * [Technologies](#Technologies)
