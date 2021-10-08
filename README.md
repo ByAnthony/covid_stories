@@ -20,10 +20,14 @@ From the contributors side:
 - Each memory should be associated with a charity;
 - Their profile should display the charities supported, the memories published and the events they have booked in.
 
+![](https://github.com/ByAnthony/covid_stories/blob/main/static/images/Screenshot%202021-10-08%20at%2009.43.36.png?raw=true)
+
 From the charities side:
 - The app should allow the charity to create, read, update and delete their profile;
 - The charity should be able to create, read, update and delete events;
 - Their profile should display their supporters, the memories published and the contributors booked in in an event.
+
+![](https://github.com/ByAnthony/covid_stories/blob/main/static/images/Screenshot%202021-10-08%20at%2009.43.05.png?raw=true)
 
 ## Technologies
 The project was created with:
