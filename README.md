@@ -54,7 +54,10 @@ createdb covid_stories
 ```
 psql -d stories -f db/covid_stories.sql
 ```
-- Import the seed console: python3 console.py
+- Import the seed console: 
+```
+python3 console.py
+```
 - Start Flask: 
 ```
 flask run
