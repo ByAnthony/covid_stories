@@ -31,16 +31,16 @@ From the charities side:
 
 ## Technologies
 The project was created with:
-- Python 3
-- psycog2
-- postgreSQL
-- HTML/CSS
-- Flask
+- Python 3;
+- psycog2;
+- postgreSQL;
+- HTML/CSS;
+- Flask.
 
 ## Setup
 Pre-requisites and usage:
-- Install Python3 and pip3
-- Install postgreSQL
+- Install Python3 and pip3;
+- Install postgreSQL;
 - Install Flask: 
 ```
 pip3 install flask
@@ -49,7 +49,7 @@ pip3 install flask
 ```
 pip3 install psycopg2
 ```
-- Clone/download the project and navigate to that directory in your terminal client
+- Clone/download the project and navigate to that directory in your terminal client;
 - Create the database: 
 ```
 createdb covid_stories
