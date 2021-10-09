@@ -12,7 +12,7 @@ This project was built for week 5 of the CodeClan Software Developer course. The
 
 ## Brief
 
-The idea was to produce an app that could be used to support charities by sharing memories of contributors' experience during Covid.
+The idea was to produce an app that could be used to support charities by sharing contributor's memories of Covid.
 
 From the contributors side:
 - The app should allow the user to create, read, update and delete their profile;
